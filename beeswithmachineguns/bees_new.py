@@ -168,6 +168,9 @@ class CurrentHive(JsonConfigger):
         self.zone = ''
         self.beesIds = ''
 
+    def activate(self):
+        self.save_config()
+
     @property
     def isActive(self):
         return self._configPath.exists()
@@ -235,9 +238,8 @@ class Beekeeper(object):
                      '%s bees are ready', self.get_active_bees_ids)
         self.connection.create_tags(
             self.get_active_bees_ids(reservation), {"Name": "a bee!"})
-        self.hive.save_config()
-        log.info('The swarm has assembled %i bees',
-                 len(reservation.instances))
+        self.hive.activate()
+        log.info('The swarm assembled %i bees', len(reservation.instances))
 
     def all_bees_are_up(self, reservation):
         return (len(self.get_active_bees_ids(reservation)) ==
