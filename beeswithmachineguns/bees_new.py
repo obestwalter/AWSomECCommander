@@ -40,17 +40,17 @@ class JsonConfigger(object):
             setattr(self, key, value)
 
     def save_config(self):
-        self._configPath.write(json.dumps(self.get_config()))
+        self._configPath.write(json.dumps(self.as_dict()))
 
     def remove_config(self):
         self._configPath.delete()
 
-    def get_config(self):
-        attrs = {k: self._nrmlz(v) for k, v in self.__dict__.items()
-                 if not k.startswith('_')}
+    def as_dict(self):
+        config = {k: self._nrmlz(v) for k, v in self.__dict__.items()
+                  if not k.startswith('_')}
         props = {k: self._nrmlz(getattr(self, k)) for k in self._publicProps}
-        attrs.update(props.items())
-        return attrs
+        config.update(props.items())
+        return config
 
     @property
     def _publicProps(self):
@@ -181,14 +181,19 @@ class Beekeeper(object):
     def hive(self):
         if not hasattr(self, '_hive'):
             self._hive = CurrentHive()
-        return self._hive
+        return self.hive
+
+    @property
+    def config(self):
+        if not hasattr(self, '_config'):
+            self._config = ProjectConfig()
+        return self._config
 
     @property
     def connectionWrapper(self):
         if not hasattr(self, '_connectionWrapper'):
-            projectConfig = ProjectConfig()
             self._connectionWrapper = Ec2Connection(
-                **projectConfig.get_config())
+                **self.config.as_dict())
         return self._connectionWrapper
 
     @property
@@ -199,45 +204,48 @@ class Beekeeper(object):
 
     def _reserve_bees(self):
         if self.hive.isActive:
-            log.warning("hive is up already: %s", self.hive.get_config())
+            log.warning("hive is up already: %s", self.hive.as_dict())
             return
 
-        if not self.connectionWrapper.keyPath.exists():
-            raise BeeSting("key %s not found" % (self.connectionWrapper.keyPath))
+        if not self.config.keyPath.exists():
+            raise BeeSting("key %s not found" % (self.config.keyPath))
 
         log.info(
             'attempting to call up %s bees' %
-            (self.connectionWrapper.numberOfBees))
+            (self.config.numberOfBees))
         reservation = self.connection.run_instances(
-            image_id=self.connectionWrapper.instanceId,
-            min_count=self.connectionWrapper.numberOfBees,
-            max_count=self.connectionWrapper.numberOfBees,
-            key_name=self.connectionWrapper.keyName,
+            image_id=self.config.instanceId,
+            min_count=self.config.numberOfBees,
+            max_count=self.config.numberOfBees,
+            key_name=self.config.keyName,
             security_groups=self.connectionWrapper.securityGroupIds,
-            instance_type=self.connectionWrapper.instanceType,
-            placement=(None if self.connectionWrapper.isGovZone
-                       else self.connectionWrapper.zone),
+            instance_type=self.config.instanceType,
+            placement=(None if self.config.isGovZone
+                       else self.config.zone),
             subnet_id='')
-        self._reservation = reservation
+        return reservation
 
     def up(self):
-        self._reserve_bees()
-        while not self.allBeesAreUp:
+        reservation = self._reserve_bees()
+        if not reservation:
+            return
+
+        while not self.all_bees_are_up(reservation):
             log.info('waiting for bees to load their machine guns... '
-                     '%s bees are ready', self.activeBeesIds)
-        self.connection.create_tags(self.activeBeesIds, {"Name": "a bee!"})
-        self._hive.save_config()
+                     '%s bees are ready', self.get_active_bees_ids)
+        self.connection.create_tags(
+            self.get_active_bees_ids(reservation), {"Name": "a bee!"})
+        self.hive.save_config()
         log.info('The swarm has assembled %i bees',
-                 len(self._reservation.instances))
+                 len(reservation.instances))
 
-    @property
-    def allBeesAreUp(self):
-        return len(self.activeBeesIds) == self.connectionWrapper.numberOfBees
+    def all_bees_are_up(self, reservation):
+        return (len(self.get_active_bees_ids(reservation)) ==
+                self.config.numberOfBees)
 
-    @property
-    def activeBeesIds(self):
+    def get_active_bees_ids(self, reservation):
         instanceIds = []
-        for instance in self._reservation.instances:
+        for instance in reservation.instances:
             instance.update()
             if instance.state == 'running':
                 instanceIds.append(instance.id)
@@ -272,12 +280,18 @@ def main(workingPath=None):
     log.info('working in %s', workPath)
     logCnf = LoggingConfig()
     logCnf.init_logging(logLevel=logging.DEBUG)
+
+    bk = Beekeeper()
+    bk.up()
+    print obj_attr(bk.connection, filterPrivate=False)
+    exit()
+
+    print bk.all_bees_are_up
     cnf = ProjectConfig()
 
     print cnf.numberOfBees
-    print cnf._config
 
-    ec2 = Ec2Connection(**cnf._config)
+    ec2 = Ec2Connection(**cnf.as_dict())
     # for g in ec2._allSecurityGroups:
     #     print obj_attr(g)
     print ec2.securityGroupIds
@@ -295,7 +309,6 @@ def main(workingPath=None):
     print hive.isActive
     # print hive._config
     # print hive.isConfigured
-    print hive._config
 
 
 if __name__ == '__main__':
