@@ -44,7 +44,7 @@ STATE_FILENAME = os.path.expanduser('~/.bees')
 
 # Utilities
 
-def _read_server_list():
+def read_server_list():
     instance_ids = []
 
     if not os.path.isfile(STATE_FILENAME):
@@ -61,23 +61,23 @@ def _read_server_list():
 
     return (username, key_name, zone, instance_ids)
 
-def _write_server_list(username, key_name, zone, instances):
+def write_server_list(username, key_name, zone, instances):
     with open(STATE_FILENAME, 'w') as f:
         f.write('%s\n' % username)
         f.write('%s\n' % key_name)
         f.write('%s\n' % zone)
         f.write('\n'.join([instance.id for instance in instances]))
 
-def _delete_server_list():
+def delete_server_list():
     os.remove(STATE_FILENAME)
 
-def _get_pem_path(key):
+def get_pem_path(key):
     return os.path.expanduser('~/.ssh/%s.pem' % key)
 
-def _get_region(zone):
+def get_region(zone):
     return zone if 'gov' in zone else zone[:-1] # chop off the "d" in the "us-east-1d" to get the "Region"
 
-def _get_security_group_ids(connection, security_group_names, subnet):
+def get_security_group_ids(connection, security_group_names, subnet):
     ids = []
     # Since we cannot get security groups in a vpc by name, we get all security groups and parse them by name later
     security_groups = connection.get_all_security_groups()
@@ -101,7 +101,7 @@ def up(count, group, zone, image_id, instance_type, username, key_name, subnet):
     Startup the load testing server.
     """
 
-    existing_username, existing_key_name, existing_zone, instance_ids = _read_server_list()
+    existing_username, existing_key_name, existing_zone, instance_ids = read_server_list()
 
     if instance_ids:
         print 'Bees are already assembled and awaiting orders.'
@@ -109,14 +109,14 @@ def up(count, group, zone, image_id, instance_type, username, key_name, subnet):
 
     count = int(count)
 
-    pem_path = _get_pem_path(key_name)
+    pem_path = get_pem_path(key_name)
 
     if not os.path.isfile(pem_path):
         print 'Warning. No key file found for %s. You will need to add this key to your SSH agent to connect.' % pem_path
 
     print 'Connecting to the hive.'
 
-    ec2_connection = boto.ec2.connect_to_region(_get_region(zone))
+    ec2_connection = boto.ec2.connect_to_region(get_region(zone))
 
     print 'Attempting to call up %i bees.' % count
 
@@ -125,7 +125,7 @@ def up(count, group, zone, image_id, instance_type, username, key_name, subnet):
         min_count=count,
         max_count=count,
         key_name=key_name,
-        security_groups=[group] if subnet is None else _get_security_group_ids(ec2_connection, [group], subnet),
+        security_groups=[group] if subnet is None else get_security_group_ids(ec2_connection, [group], subnet),
         instance_type=instance_type,
         placement=None if 'gov' in zone else zone,
         subnet_id=subnet)
@@ -147,7 +147,7 @@ def up(count, group, zone, image_id, instance_type, username, key_name, subnet):
 
     ec2_connection.create_tags(instance_ids, { "Name": "a bee!" })
 
-    _write_server_list(username, key_name, zone, reservation.instances)
+    write_server_list(username, key_name, zone, reservation.instances)
 
     print 'The swarm has assembled %i bees.' % len(reservation.instances)
 
@@ -155,13 +155,13 @@ def report():
     """
     Report the status of the load testing servers.
     """
-    username, key_name, zone, instance_ids = _read_server_list()
+    username, key_name, zone, instance_ids = read_server_list()
 
     if not instance_ids:
         print 'No bees have been mobilized.'
         return
 
-    ec2_connection = boto.ec2.connect_to_region(_get_region(zone))
+    ec2_connection = boto.ec2.connect_to_region(get_region(zone))
 
     reservations = ec2_connection.get_all_instances(instance_ids=instance_ids)
 
@@ -177,7 +177,7 @@ def down():
     """
     Shutdown the load testing server.
     """
-    username, key_name, zone, instance_ids = _read_server_list()
+    username, key_name, zone, instance_ids = read_server_list()
 
     if not instance_ids:
         print 'No bees have been mobilized.'
@@ -185,7 +185,7 @@ def down():
 
     print 'Connecting to the hive.'
 
-    ec2_connection = boto.ec2.connect_to_region(_get_region(zone))
+    ec2_connection = boto.ec2.connect_to_region(get_region(zone))
 
     print 'Calling off the swarm.'
 
@@ -194,7 +194,7 @@ def down():
 
     print 'Stood down %i bees.' % len(terminated_instance_ids)
 
-    _delete_server_list()
+    delete_server_list()
 
 def _attack(params):
     """
@@ -208,7 +208,7 @@ def _attack(params):
         client = paramiko.SSHClient()
         client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-        pem_path = params.get('key_name') and _get_pem_path(params['key_name']) or None
+        pem_path = params.get('key_name') and get_pem_path(params['key_name']) or None
         if not os.path.isfile(pem_path):
             client.load_system_host_keys()
             client.connect(params['instance_name'], username=params['username'])
@@ -235,7 +235,7 @@ def _attack(params):
             return None
 
         if params['post_file']:
-            pem_file_path=_get_pem_path(params['key_name'])
+            pem_file_path=get_pem_path(params['key_name'])
             os.system("scp -q -o 'StrictHostKeyChecking=no' -i %s %s %s@%s:/tmp/honeycomb" % (pem_file_path, params['post_file'], params['username'], params['instance_name']))
             options += ' -T "%(mime_type)s; charset=UTF-8" -p /tmp/honeycomb' % params
 
@@ -290,7 +290,7 @@ def _attack(params):
         return e
 
 
-def _summarize_results(results, params, csv_filename):
+def summarize_results(results, params, csv_filename):
     summarized_results = dict()
     summarized_results['timeout_bees'] = [r for r in results if r is None]
     summarized_results['exception_bees'] = [r for r in results if type(r) == socket.error]
@@ -329,14 +329,14 @@ def _summarize_results(results, params, csv_filename):
         else:
             summarized_results['performance_accepted'] = False
 
-    summarized_results['request_time_cdf'] = _get_request_time_cdf(summarized_results['total_complete_requests'], summarized_results['complete_bees'])
+    summarized_results['request_time_cdf'] = get_request_time_cdf(summarized_results['total_complete_requests'], summarized_results['complete_bees'])
     if csv_filename:
-        _create_request_time_cdf_csv(results, summarized_results['complete_bees_params'], summarized_results['request_time_cdf'], csv_filename)
+        create_request_time_cdf_csv(results, summarized_results['complete_bees_params'], summarized_results['request_time_cdf'], csv_filename)
 
     return summarized_results
 
 
-def _create_request_time_cdf_csv(results, complete_bees_params, request_time_cdf, csv_filename):
+def create_request_time_cdf_csv(results, complete_bees_params, request_time_cdf, csv_filename):
     if csv_filename:
         with open(csv_filename, 'w') as stream:
             writer = csv.writer(stream)
@@ -351,7 +351,7 @@ def _create_request_time_cdf_csv(results, complete_bees_params, request_time_cdf
                 writer.writerow(row)
 
 
-def _get_request_time_cdf(total_complete_requests, complete_bees):
+def get_request_time_cdf(total_complete_requests, complete_bees):
     # Recalculate the global cdf based on the csv files collected from
     # ab. Can do this by sampling the request_time_cdfs for each of
     # the completed bees in proportion to the number of
@@ -372,7 +372,7 @@ def _get_request_time_cdf(total_complete_requests, complete_bees):
     return request_time_cdf
 
 
-def _print_results(summarized_results):
+def print_results(summarized_results):
     """
     Print summarized load-testing results.
     """
@@ -420,7 +420,7 @@ def attack(url, n, c, **options):
     """
     Test the root url of this site.
     """
-    username, key_name, zone, instance_ids = _read_server_list()
+    username, key_name, zone, instance_ids = read_server_list()
     headers = options.get('headers', '')
     csv_filename = options.get("csv_filename", '')
     cookies = options.get('cookies', '')
@@ -440,7 +440,7 @@ def attack(url, n, c, **options):
 
     print 'Connecting to the hive.'
 
-    ec2_connection = boto.ec2.connect_to_region(_get_region(zone))
+    ec2_connection = boto.ec2.connect_to_region(get_region(zone))
 
     print 'Assembling bees.'
 
@@ -526,9 +526,9 @@ def attack(url, n, c, **options):
     pool = Pool(len(params))
     results = pool.map(_attack, params)
 
-    summarized_results = _summarize_results(results, params, csv_filename)
+    summarized_results = summarize_results(results, params, csv_filename)
     print 'Offensive complete.'
-    _print_results(summarized_results)
+    print_results(summarized_results)
 
     print 'The swarm is awaiting new orders.'
 
@@ -540,3 +540,11 @@ def attack(url, n, c, **options):
             print('Your targets performance tests meet our standards, the Queen sends her regards.')
             sys.exit(0)
 
+if __name__ == '__main__':
+    # bees up -s 10 -z us-east-1a -k aws-ec2-us-east-1
+    for _ in range(100):
+        attack(
+            'http://update-bridge-oliver-y5rxgpaear.elasticbeanstalk.com/',
+            n=100000, c=10000,
+            post_file='/home/obestwalter/work/prodenv/update-bridge/tests/test_load/post_data'
+        )
