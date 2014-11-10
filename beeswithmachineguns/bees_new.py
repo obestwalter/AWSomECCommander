@@ -40,16 +40,12 @@ class JsonConfigger(object):
             setattr(self, key, value)
 
     def save_config(self):
-        self._configPath.write(json.dumps(self._config))
+        self._configPath.write(json.dumps(self.get_config()))
 
     def remove_config(self):
         self._configPath.delete()
 
     def get_config(self):
-        return self._config
-
-    @property
-    def _config(self):
         attrs = {k: self._nrmlz(v) for k, v in self.__dict__.items()
                  if not k.startswith('_')}
         props = {k: self._nrmlz(getattr(self, k)) for k in self._publicProps}
@@ -82,6 +78,8 @@ class ProjectConfig(JsonConfigger):
     DEFAULT_SECURITY_GROUP = 'default'
     DEFAULT_ZONE = 'us-east-1d'
     DEFAULT_INSTANCE_ID = 'ami-ff17fb96'
+    DEFAULT_INSTANCE_TYPE = 't1.micro'
+
     DEFAULT_NUMBER_OF_BEES = 10
 
     def __init__(self):
@@ -92,6 +90,7 @@ class ProjectConfig(JsonConfigger):
         self.zone = self.DEFAULT_ZONE
         self.instanceId = self.DEFAULT_INSTANCE_ID
         self.numberOfBees = self.DEFAULT_NUMBER_OF_BEES
+        self.instanceType = self.DEFAULT_INSTANCE_TYPE
 
     @property
     def region(self):
@@ -99,7 +98,11 @@ class ProjectConfig(JsonConfigger):
             * keep unchanged for gov zones
             * chop off the last letter in e.g. "us-east-1d"
         """
-        return self.zone if 'gov' in self.zone else self.zone[:-1]
+        return self.zone if self.isGovZone else self.zone[:-1]
+
+    @property
+    def isGovZone(self):
+        return 'gov' in self.zone
 
     @property
     def keyPath(self):
@@ -125,11 +128,14 @@ class ProjectConfig(JsonConfigger):
 class Ec2Connection(object):
     def __init__(self, **kwargs):
         self.zone = kwargs.get('zone')
+        self.isGovZone = kwargs.get('isGovZone')
         self.region = kwargs.get('region')
         self.securityGroupNames = kwargs.get('securityGroupNames')
         self.instanceId = kwargs.get('instanceId')
+        self.instanceType = kwargs.get('instanceType')
         self.numberOfBees = kwargs.get('numberOfBees')
-        self.keyPath = kwargs.get('keyPath')
+        self.keyName = LocalPath(kwargs.get('keyName'))
+        self.keyPath = LocalPath(kwargs.get('keyPath'))
         self._connection = None
 
     @property
@@ -159,13 +165,8 @@ class CurrentHive(JsonConfigger):
     def __init__(self):
         super(CurrentHive, self).__init__(self.CONFIG)
         self.username = ''
-        self.keyName = ''
         self.zone = ''
         self.beesIds = ''
-
-    @property
-    def isConfigured(self):
-        return all(self._config)
 
     @property
     def isActive(self):
@@ -173,12 +174,8 @@ class CurrentHive(JsonConfigger):
 
 
 class Beekeeper(object):
-    DEFAULT_INSTANCE_TYPE = 't1.micro'
-
     def __init__(self):
-        # self.group = None
-        # self.imageId = None
-        self.instanceType = self.DEFAULT_INSTANCE_TYPE
+        self.bees = None
 
     @property
     def hive(self):
@@ -186,53 +183,65 @@ class Beekeeper(object):
             self._hive = CurrentHive()
         return self._hive
 
-    def up(self):
+    @property
+    def connectionWrapper(self):
+        if not hasattr(self, '_connectionWrapper'):
+            projectConfig = ProjectConfig()
+            self._connectionWrapper = Ec2Connection(
+                **projectConfig.get_config())
+        return self._connectionWrapper
+
+    @property
+    def connection(self):
+        if not hasattr(self, '_connection'):
+            self._connection = self.connectionWrapper.connection
+        return self._connection
+
+    def _reserve_bees(self):
         if self.hive.isActive:
             log.warning("hive is up already: %s", self.hive.get_config())
             return
 
-        pem_path = get_pem_path(self.hive.keyName)
+        if not self.connectionWrapper.keyPath.exists():
+            raise BeeSting("key %s not found" % (self.connectionWrapper.keyPath))
 
-        if not os.path.isfile(pem_path):
-            print 'Warning. No key file found for %s. You will need to add this key to your SSH agent to connect.' % pem_path
-
-        print 'Connecting to the hive.'
-
-        ec2_connection = boto.ec2.connect_to_region(get_region(zone))
-
-        print 'Attempting to call up %i bees.' % count
-
-        reservation = ec2_connection.run_instances(
-            image_id=image_id,
-            min_count=count,
-            max_count=count,
-            key_name=self.keyName,
-            security_groups=self.securityGroupIds,
-            instance_type=instance_type,
-            placement=None if 'gov' in zone else zone,
+        log.info(
+            'attempting to call up %s bees' %
+            (self.connectionWrapper.numberOfBees))
+        reservation = self.connection.run_instances(
+            image_id=self.connectionWrapper.instanceId,
+            min_count=self.connectionWrapper.numberOfBees,
+            max_count=self.connectionWrapper.numberOfBees,
+            key_name=self.connectionWrapper.keyName,
+            security_groups=self.connectionWrapper.securityGroupIds,
+            instance_type=self.connectionWrapper.instanceType,
+            placement=(None if self.connectionWrapper.isGovZone
+                       else self.connectionWrapper.zone),
             subnet_id='')
+        self._reservation = reservation
 
-        print 'Waiting for bees to load their machine guns...'
+    def up(self):
+        self._reserve_bees()
+        while not self.allBeesAreUp:
+            log.info('waiting for bees to load their machine guns... '
+                     '%s bees are ready', self.activeBeesIds)
+        self.connection.create_tags(self.activeBeesIds, {"Name": "a bee!"})
+        self._hive.save_config()
+        log.info('The swarm has assembled %i bees',
+                 len(self._reservation.instances))
 
-        instance_ids = []
+    @property
+    def allBeesAreUp(self):
+        return len(self.activeBeesIds) == self.connectionWrapper.numberOfBees
 
-        for instance in reservation.instances:
+    @property
+    def activeBeesIds(self):
+        instanceIds = []
+        for instance in self._reservation.instances:
             instance.update()
-            while instance.state != 'running':
-                print '.'
-                time.sleep(5)
-                instance.update()
-
-            instance_ids.append(instance.id)
-
-            print 'Bee %s is ready for the attack.' % instance.id
-
-        ec2_connection.create_tags(instance_ids, { "Name": "a bee!" })
-
-        write_server_list(username, key_name, zone, reservation.instances)
-
-        print 'The swarm has assembled %i bees.' % len(reservation.instances)
-
+            if instance.state == 'running':
+                instanceIds.append(instance.id)
+        return instanceIds
 
 
 class LoggingConfig(object):
