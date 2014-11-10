@@ -9,75 +9,234 @@
     * ease testing
     * functionality easily adjustable by by overwriting methods
 
+* thrown out subnet stuff, as I don't understand the currrent implementation
+  (seems somewhat nonsensical to me ...)
 """
+import inspect
 import simplejson as json
 import logging
 from plumbum.path import LocalPath, RemotePath, LocalWorkdir
 
 from beeswithmachineguns.bees import *
+from beeswithmachineguns.obj_inspection import obj_attr
 
 
 log = logging.getLogger(__name__)
 
 
-class ProjectConfig(object):
-    FILENAME_CONFIG = 'hive.json'
-    """general configuration"""
+class BeeSting(Exception):
+    """class for exceptions raised by this module"""
+    pass
+
+
+class JsonConfigger(object):
+    def __init__(self, configPath):
+        self._configPath = LocalPath(configPath)
+
+    def load_config(self):
+        config = json.loads(self._configPath.read())
+        for key, value in config.items():
+            log.debug("read from _config: %s <- %s", key, value)
+            setattr(self, key, value)
+
+    def save_config(self):
+        self._configPath.write(json.dumps(self._config))
+
+    def remove_config(self):
+        self._configPath.delete()
+
+    def get_config(self):
+        return self._config
+
+    @property
+    def _config(self):
+        attrs = {k: self._nrmlz(v) for k, v in self.__dict__.items()
+                 if not k.startswith('_')}
+        props = {k: self._nrmlz(getattr(self, k)) for k in self._publicProps}
+        attrs.update(props.items())
+        return attrs
+
+    @property
+    def _publicProps(self):
+        return [name for (name, member) in inspect.getmembers(self.__class__)
+                if not name.startswith('_') and type(member) == property]
+
+    def _nrmlz(self, value):
+        """normalize strange things to json compatible values"""
+        if isinstance(value, str):
+            return value
+
+        if isinstance(value, LocalPath):
+            return str(value)
+
+        if isinstance(value, list):
+            return [self._nrmlz(v) for v in value]
+
+        return value
+
+
+class ProjectConfig(JsonConfigger):
+    CONFIG = 'hive.json'
+    """Global configuration"""
+    KEY_NAME_PREFIX = "aws-ec2"
+    DEFAULT_SECURITY_GROUP = 'default'
+    DEFAULT_ZONE = 'us-east-1d'
+    DEFAULT_INSTANCE_ID = 'ami-ff17fb96'
+    DEFAULT_NUMBER_OF_BEES = 10
 
     def __init__(self):
-        self.workPath = LocalWorkdir()
-        self.currentConfigPath = self.workPath / self.FILENAME_CONFIG
-        """:type: LocalPath"""
+        super(ProjectConfig, self).__init__(self.CONFIG)
+        self._keyContainerPaths = [self._configPath.dirname,
+                                   LocalPath(os.getenv('HOME')) / '.ssh']
+        self.securityGroupNames = [self.DEFAULT_SECURITY_GROUP]
+        self.zone = self.DEFAULT_ZONE
+        self.instanceId = self.DEFAULT_INSTANCE_ID
+        self.numberOfBees = self.DEFAULT_NUMBER_OF_BEES
+
+    @property
+    def region(self):
+        """calculate region from configured zone:
+            * keep unchanged for gov zones
+            * chop off the last letter in e.g. "us-east-1d"
+        """
+        return self.zone if 'gov' in self.zone else self.zone[:-1]
+
+    @property
+    def keyPath(self):
+        if not hasattr(self, '_keyPath'):
+            for path in self._keyContainerPaths:
+                potentialKeyPath = path / self.keyName
+                log.debug("try key path %s", potentialKeyPath)
+                if potentialKeyPath.exists():
+                    self._keyPath = potentialKeyPath
+                    break
+            else:
+                raise BeeSting(
+                    'no key named %s found in %s' %
+                    (self.keyName, self._keyContainerPaths))
+
+        return self._keyPath
+
+    @property
+    def keyName(self):
+        return "%s-%s.pem" % (self.KEY_NAME_PREFIX, self.region)
 
 
-class CurrentHive(object):
-    FILENAME_CURRENT_HIVE = 'current.json'
+class Ec2Connection(object):
+    def __init__(self, **kwargs):
+        self.zone = kwargs.get('zone')
+        self.region = kwargs.get('region')
+        self.securityGroupNames = kwargs.get('securityGroupNames')
+        self.instanceId = kwargs.get('instanceId')
+        self.numberOfBees = kwargs.get('numberOfBees')
+        self.keyPath = kwargs.get('keyPath')
+        self._connection = None
+
+    @property
+    def securityGroupIds(self):
+        return [group.vpc_id for group in self.securityGroups]
+
+    @property
+    def securityGroups(self):
+        return [g for g in self._allSecurityGroups
+                if g.name in self.securityGroupNames]
+
+    @property
+    def _allSecurityGroups(self):
+        return self.connection.get_all_security_groups()
+
+    @property
+    def connection(self):
+        if not self._connection:
+            self._connection = boto.ec2.connect_to_region(self.region)
+        return self._connection
+
+
+class CurrentHive(JsonConfigger):
+    CONFIG = 'current.json'
     """configuration of an active bee hive (autogenerated)"""
 
     def __init__(self):
-        self.workPath = LocalWorkdir()
-        self.currentHivePath = self.workPath / self.FILENAME_CURRENT_HIVE
-        """:type: LocalPath"""
-        self.username = None
-        self.keyName = None
-        self.zone = None
-        self.beesIds = None
+        super(CurrentHive, self).__init__(self.CONFIG)
+        self.username = ''
+        self.keyName = ''
+        self.zone = ''
+        self.beesIds = ''
 
     @property
     def isConfigured(self):
-        return all(self.config)
+        return all(self._config)
 
     @property
     def isActive(self):
-        return self.currentHivePath.exists()
-
-    @property
-    def config(self):
-        return [self.username, self.keyName, self.zone, self.beesIds]
-
-    def get_active_config(self):
-        config = json.loads(self.currentHivePath.read())
-        for key, value in config.items():
-            log.debug("read from config: %s <- %s", key, value)
-            setattr(self, key, value)
-        log.info("hive initialized - "
-                 "username=%s, keyName%s, zone=%s, beesIds=%s",
-                 self.username, self.keyName, self.zone, self.beesIds)
-
-    def save_active_config(self):
-        self.currentHivePath.write('\n'.join(self.config))
-
-    def destroy(self):
-        self.currentHivePath.delete()
+        return self._configPath.exists()
 
 
 class Beekeeper(object):
+    DEFAULT_INSTANCE_TYPE = 't1.micro'
+
     def __init__(self):
-        pass
+        # self.group = None
+        # self.imageId = None
+        self.instanceType = self.DEFAULT_INSTANCE_TYPE
+
+    @property
+    def hive(self):
+        if not hasattr(self, '_hive'):
+            self._hive = CurrentHive()
+        return self._hive
+
+    def up(self):
+        if self.hive.isActive:
+            log.warning("hive is up already: %s", self.hive.get_config())
+            return
+
+        pem_path = get_pem_path(self.hive.keyName)
+
+        if not os.path.isfile(pem_path):
+            print 'Warning. No key file found for %s. You will need to add this key to your SSH agent to connect.' % pem_path
+
+        print 'Connecting to the hive.'
+
+        ec2_connection = boto.ec2.connect_to_region(get_region(zone))
+
+        print 'Attempting to call up %i bees.' % count
+
+        reservation = ec2_connection.run_instances(
+            image_id=image_id,
+            min_count=count,
+            max_count=count,
+            key_name=self.keyName,
+            security_groups=self.securityGroupIds,
+            instance_type=instance_type,
+            placement=None if 'gov' in zone else zone,
+            subnet_id='')
+
+        print 'Waiting for bees to load their machine guns...'
+
+        instance_ids = []
+
+        for instance in reservation.instances:
+            instance.update()
+            while instance.state != 'running':
+                print '.'
+                time.sleep(5)
+                instance.update()
+
+            instance_ids.append(instance.id)
+
+            print 'Bee %s is ready for the attack.' % instance.id
+
+        ec2_connection.create_tags(instance_ids, { "Name": "a bee!" })
+
+        write_server_list(username, key_name, zone, reservation.instances)
+
+        print 'The swarm has assembled %i bees.' % len(reservation.instances)
+
 
 
 class LoggingConfig(object):
-    FILENAME_LOG = 'bee.log'
+    NAME = 'bees'
 
     def __init__(self):
         self.workPath = LocalWorkdir()
@@ -86,14 +245,14 @@ class LoggingConfig(object):
 
     def init_logging(self, logLevel=logging.INFO, logToFile=True):
         log.setLevel(logLevel)
-        self.localLogPath = self.workPath / self.FILENAME_LOG
+        self.localLogPath = self.workPath / (self.NAME + '.log')
         fmt = '%(asctime)s %(name)s %(levelname)s: %(message)s'
         logging.basicConfig(format=fmt)
         if logToFile:
             fh = logging.FileHandler(filename=str(self.localLogPath))
             fh.setFormatter(logging.Formatter(fmt))
             log.addHandler(fh)
-        log.name = 'bees' if log.name == '__main__' else log.name
+        log.name = self.NAME if log.name == '__main__' else log.name
         log.debug("working in %s", self.workPath)
 
 
@@ -101,15 +260,33 @@ def main(workingPath=None):
     workPath = LocalWorkdir()
     if workingPath:
         workPath.chdir(workingPath)
+    log.info('working in %s', workPath)
     logCnf = LoggingConfig()
     logCnf.init_logging(logLevel=logging.DEBUG)
+    cnf = ProjectConfig()
+
+    print cnf.numberOfBees
+    print cnf._config
+
+    ec2 = Ec2Connection(**cnf._config)
+    # for g in ec2._allSecurityGroups:
+    #     print obj_attr(g)
+    print ec2.securityGroupIds
+    exit()
+
+    print ec2.connection
+    print ec2.__dict__.items()
+    print type(ec2.connection)
+
+    exit()
     hive = CurrentHive()
-    if hive.isActive:
-        hive.get_active_config()
     print hive.isActive
-    # print hive.config
+    if hive.isActive:
+        hive.load_config()
+    print hive.isActive
+    # print hive._config
     # print hive.isConfigured
-    print hive.config
+    print hive._config
 
 
 if __name__ == '__main__':
