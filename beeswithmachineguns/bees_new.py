@@ -2,8 +2,6 @@
 
 * separated configuration and core functionality
 
-* output is logged instead of printed
-
 * class based approach
   (two reasons:
     * ease testing
@@ -11,6 +9,10 @@
 
 * thrown out subnet stuff, as I don't understand the currrent implementation
   (seems somewhat nonsensical to me ...)
+
+* thrown out (very specific) gov stuff (can easily overriden)
+
+* output is logged instead of printed
 """
 import logging
 import os
@@ -20,7 +22,6 @@ import boto.ec2
 from plumbum.path import LocalPath, LocalWorkdir
 
 import beeswithmachineguns.lib as beelib
-from beeswithmachineguns.lib import oa
 
 
 log = logging.getLogger(__name__)
@@ -28,26 +29,26 @@ log = logging.getLogger(__name__)
 
 class Beekeeper(object):
     def __init__(self):
-        self.bees = None
         self.reservation = None
+        self.reservationId = None
 
-    def activate_swarm(self):
-        if self.hive.isActive:
+    def weaponize_bees(self):
+        if self.hive.IS_ACTIVE:
             log.warning("hive is up already: %s", self.hive.asDict)
             # todo get reservation from self.hive.reservationId
             return
 
-        self.reserve_swarm()
+        self.call_swarm()
         while not self.swarmIsActive:
             log.info('waiting for bees to load their machine guns... '
-                     '%s bees are ready', self.activeBeesIds)
+                     '%s bees are ready', len(self.activeBeesIds))
         log.debug("tag bees %s", self.activeBeesIds)
         self.connection.create_tags(self.activeBeesIds, {"Name": "a bee!"})
-        self.hive.reservationId = self.reservation.id
-        self.hive.activate()
+        self.reservationId = self.reservation.id
+        self.hive.activate(self)
         log.info('The swarm assembled %i bees', len(self.activeBeesIds))
 
-    def reserve_swarm(self):
+    def call_swarm(self):
         if not self.cnf.KEY_PATH:
             raise beelib.BeeSting("key %s not found" % (self.cnf.KEY_PATH))
 
@@ -62,6 +63,7 @@ class Beekeeper(object):
             placement=None,
             subnet_id='')
 
+    @property
     def swarmIsActive(self):
         return len(self.activeBeesIds) == self.cnf.numberOfBees
 
@@ -80,16 +82,12 @@ class Beekeeper(object):
     @beelib.cached_property
     def hive(self):
         """current hive status"""
-        hive = CurrentHive()
-        hive.load_config()
-        return hive
+        return CurrentHive().load_config()
 
     @beelib.cached_property
     def cnf(self):
         """configuration object"""
-        cnf = Config()
-        cnf.load_config()
-        return cnf
+        return Config().load_config()
 
     @beelib.cached_property
     def connection(self):
@@ -144,18 +142,22 @@ class CurrentHive(beelib.JsonConfigger):
 
     def __init__(self):
         super(CurrentHive, self).__init__(self.CONFIG)
-        self.username = ''
         self.zone = ''
-        self.beesIds = ''
-
+        self.activeBeesIds = ''
         self.reservationId = None
 
-    def activate(self):
+    def activate(self, obj):
+        for attrName in self.asDict.keys():
+            try:
+                value = getattr(obj, attrName)
+            except AttributeError:
+                value = getattr(obj.cnf, attrName)
+            setattr(self, attrName, value)
         self.save_config()
 
     @property
-    def isActive(self):
-        return self._path.exists()
+    def IS_ACTIVE(self):
+        return self.HAS_SAVED_STATE
 
 
 class LoggingConfig(object):
@@ -176,18 +178,13 @@ class LoggingConfig(object):
             fh = logging.FileHandler(filename=str(self.localLogPath))
             fh.setFormatter(logging.Formatter(fmt))
             log.addHandler(fh)
-        #log.name = self.NAME if log.name == '__main__' else log.name
+        log.name = self.NAME if log.name == '__main__' else log.name
         log.debug("working in %s", self.workPath)
 
 
 def main():
     bk = Beekeeper()
-
-    print oa(bk.cnf)
-    bk.cnf.save_config()
-    print oa(bk.hive)
-    exit()
-    bk.activate_swarm()
+    bk.weaponize_bees()
 
 
 if __name__ == '__main__':

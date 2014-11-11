@@ -30,17 +30,22 @@ class JsonConfigger(object):
     def load_config(self):
         if not self._path.exists():
             log.info("nothing to load at %s", self._path)
-            return
+            return self
 
         config = json.loads(self._path.read())
         for attrName, value in config.items():
             setattr(self, attrName, value)
+        return self
 
     def save_config(self):
         self._path.write(json.dumps(self.asDict, indent=True))
 
     def remove_config(self):
         self._path.delete()
+
+    @property
+    def HAS_SAVED_STATE(self):
+        return self._path.exists()
 
     @property
     def asDict(self):
