@@ -81,14 +81,14 @@ class Beekeeper(object):
 
     @beelib.cached_property
     def config(self):
-        return ProjectConfig()
+        return Config()
 
     @beelib.cached_property
     def connection(self):
         return boto.ec2.connect_to_region(self.config.region)
 
 
-class ProjectConfig(beelib.JsonConfigger):
+class Config(beelib.JsonConfigger):
     CONFIG = 'beesconfig.json'
     """Global configuration"""
     KEY_NAME_PREFIX = "aws-ec2"
@@ -100,7 +100,7 @@ class ProjectConfig(beelib.JsonConfigger):
     DEFAULT_NUMBER_OF_BEES = 10
 
     def __init__(self):
-        super(ProjectConfig, self).__init__(self.CONFIG)
+        super(Config, self).__init__(self.CONFIG)
         self._keyContainerPaths = [self._path.dirname,
                                    LocalPath(os.getenv('HOME')) / '.ssh']
         self.securityGroup = self.DEFAULT_SECURITY_GROUP
@@ -172,7 +172,7 @@ class LoggingConfig(object):
 
 
 def main():
-    #ProjectConfig.DEFAULT_NUMBER_OF_BEES = 1
+    Config.DEFAULT_NUMBER_OF_BEES = 1
     pc = CurrentHive()
     pc.beesIds = [1, 2, 3]
     print pc.asDict
