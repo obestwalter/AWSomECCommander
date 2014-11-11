@@ -20,6 +20,7 @@ import boto.ec2
 from plumbum.path import LocalPath, LocalWorkdir
 
 import beeswithmachineguns.lib as beelib
+from beeswithmachineguns.lib import oa
 
 
 log = logging.getLogger(__name__)
@@ -40,28 +41,29 @@ class Beekeeper(object):
         while not self.swarmIsActive:
             log.info('waiting for bees to load their machine guns... '
                      '%s bees are ready', self.activeBeesIds)
+        log.debug("tag bees %s", self.activeBeesIds)
         self.connection.create_tags(self.activeBeesIds, {"Name": "a bee!"})
         self.hive.reservationId = self.reservation.id
         self.hive.activate()
         log.info('The swarm assembled %i bees', len(self.activeBeesIds))
 
     def reserve_swarm(self):
-        if not self.config.keyPath:
-            raise beelib.BeeSting("key %s not found" % (self.config.keyPath))
+        if not self.cnf.KEY_PATH:
+            raise beelib.BeeSting("key %s not found" % (self.cnf.KEY_PATH))
 
-        log.info('attempting to call up %s bees', self.config.numberOfBees)
+        log.info('attempting to call up %s bees', self.cnf.numberOfBees)
         self.reservation = self.connection.run_instances(
-            image_id=self.config.instanceId,
-            min_count=self.config.numberOfBees,
-            max_count=self.config.numberOfBees,
-            key_name=self.config.keyName,
-            security_groups=[self.config.securityGroup],
-            instance_type=self.config.instanceType,
+            image_id=self.cnf.instanceId,
+            min_count=self.cnf.numberOfBees,
+            max_count=self.cnf.numberOfBees,
+            key_name=self.cnf.KEY_NAME,
+            security_groups=[self.cnf.securityGroup],
+            instance_type=self.cnf.instanceType,
             placement=None,
             subnet_id='')
 
     def swarmIsActive(self):
-        return len(self.activeBeesIds) == self.config.numberOfBees
+        return len(self.activeBeesIds) == self.cnf.numberOfBees
 
     @property
     def activeBeesIds(self):
@@ -77,15 +79,22 @@ class Beekeeper(object):
 
     @beelib.cached_property
     def hive(self):
-        return CurrentHive()
+        """current hive status"""
+        hive = CurrentHive()
+        hive.load_config()
+        return hive
 
     @beelib.cached_property
-    def config(self):
-        return Config()
+    def cnf(self):
+        """configuration object"""
+        cnf = Config()
+        cnf.load_config()
+        return cnf
 
     @beelib.cached_property
     def connection(self):
-        return boto.ec2.connect_to_region(self.config.region)
+        """ec2 connection object for commanding the swarm"""
+        return boto.ec2.connect_to_region(self.cnf.REGION)
 
 
 class Config(beelib.JsonConfigger):
@@ -110,13 +119,13 @@ class Config(beelib.JsonConfigger):
         self.instanceType = self.DEFAULT_INSTANCE_TYPE
 
     @property
-    def region(self):
+    def REGION(self):
         """ region = zone without last letter """
         return self.zone[:-1]
 
     @beelib.cached_property
-    def keyPath(self):
-        candidates = [path / (self.keyName + self.KEY_EXT)
+    def KEY_PATH(self):
+        candidates = [path / (self.KEY_NAME + self.KEY_EXT)
                       for path in self._keyContainerPaths]
         for candidate in candidates:
             if candidate.exists():
@@ -125,8 +134,8 @@ class Config(beelib.JsonConfigger):
         log.warning("no key found in %s", candidates)
 
     @property
-    def keyName(self):
-        return "%s-%s" % (self.KEY_NAME_PREFIX, self.region)
+    def KEY_NAME(self):
+        return "%s-%s" % (self.KEY_NAME_PREFIX, self.REGION)
 
 
 class CurrentHive(beelib.JsonConfigger):
@@ -167,18 +176,17 @@ class LoggingConfig(object):
             fh = logging.FileHandler(filename=str(self.localLogPath))
             fh.setFormatter(logging.Formatter(fmt))
             log.addHandler(fh)
-        log.name = self.NAME if log.name == '__main__' else log.name
+        #log.name = self.NAME if log.name == '__main__' else log.name
         log.debug("working in %s", self.workPath)
 
 
 def main():
-    Config.DEFAULT_NUMBER_OF_BEES = 1
-    pc = CurrentHive()
-    pc.beesIds = [1, 2, 3]
-    print pc.asDict
-    pc.save_config()
-    exit()
     bk = Beekeeper()
+
+    print oa(bk.cnf)
+    bk.cnf.save_config()
+    print oa(bk.hive)
+    exit()
     bk.activate_swarm()
 
 
