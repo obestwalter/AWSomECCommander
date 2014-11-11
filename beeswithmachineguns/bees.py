@@ -33,18 +33,18 @@ import urllib2
 import base64
 import csv
 import sys
-import math
 import random
 
 import boto
 import boto.ec2
 import paramiko
 
+
 STATE_FILENAME = os.path.expanduser('~/.bees')
 
-# Utilities
 
 def _read_server_list():
+    # noinspection PyUnusedLocal
     instance_ids = []
 
     if not os.path.isfile(STATE_FILENAME):
@@ -61,6 +61,7 @@ def _read_server_list():
 
     return (username, key_name, zone, instance_ids)
 
+
 def _write_server_list(username, key_name, zone, instances):
     with open(STATE_FILENAME, 'w') as f:
         f.write('%s\n' % username)
@@ -68,21 +69,29 @@ def _write_server_list(username, key_name, zone, instances):
         f.write('%s\n' % zone)
         f.write('\n'.join([instance.id for instance in instances]))
 
+
 def _delete_server_list():
     os.remove(STATE_FILENAME)
+
 
 def _get_pem_path(key):
     return os.path.expanduser('~/.ssh/%s.pem' % key)
 
+
 def _get_region(zone):
-    return zone if 'gov' in zone else zone[:-1] # chop off the "d" in the "us-east-1d" to get the "Region"
+     # chop off the "d" in the "us-east-1d" to get the "Region"
+    return zone if 'gov' in zone else zone[:-1]
+
 
 def _get_security_group_ids(connection, security_group_names, subnet):
-    ids = []
-    # Since we cannot get security groups in a vpc by name, we get all security groups and parse them by name later
-    security_groups = connection.get_all_security_groups()
+    """ Since we cannot get security groups in a vpc by name,
+    we get all security groups and parse them by name later
 
-    # Parse the name of each security group and add the id of any match to the group list
+    """
+    ids = []
+    security_groups = connection.get_all_security_groups()
+    # Parse the name of each security group and add the
+    # id of any match to the group list
     for group in security_groups:
         for name in security_group_names:
             if group.name == name:
@@ -94,15 +103,12 @@ def _get_security_group_ids(connection, security_group_names, subnet):
 
         return ids
 
-# Methods
 
-def up(count, group, zone, image_id, instance_type, username, key_name, subnet):
-    """
-    Startup the load testing server.
-    """
-
-    existing_username, existing_key_name, existing_zone, instance_ids = _read_server_list()
-
+def up(count, group, zone, image_id, instance_type, username, key_name,
+       subnet):
+    """ Startup the load testing server. """
+    result = _read_server_list()
+    existing_username, existing_key_name, existing_zone, instance_ids = result
     if instance_ids:
         print 'Bees are already assembled and awaiting orders.'
         return
@@ -112,7 +118,8 @@ def up(count, group, zone, image_id, instance_type, username, key_name, subnet):
     pem_path = _get_pem_path(key_name)
 
     if not os.path.isfile(pem_path):
-        print 'Warning. No key file found for %s. You will need to add this key to your SSH agent to connect.' % pem_path
+        print 'Warning. No key file found for %s. You will need to add this ' \
+              'key to your SSH agent to connect.' % pem_path
 
     print 'Connecting to the hive.'
 
@@ -120,12 +127,15 @@ def up(count, group, zone, image_id, instance_type, username, key_name, subnet):
 
     print 'Attempting to call up %i bees.' % count
 
+    security_groups = (
+        [group] if subnet is None
+        else _get_security_group_ids(ec2_connection, [group], subnet))
     reservation = ec2_connection.run_instances(
         image_id=image_id,
         min_count=count,
         max_count=count,
         key_name=key_name,
-        security_groups=[group] if subnet is None else _get_security_group_ids(ec2_connection, [group], subnet),
+        security_groups=security_groups,
         instance_type=instance_type,
         placement=None if 'gov' in zone else zone,
         subnet_id=subnet)
@@ -145,11 +155,12 @@ def up(count, group, zone, image_id, instance_type, username, key_name, subnet):
 
         print 'Bee %s is ready for the attack.' % instance.id
 
-    ec2_connection.create_tags(instance_ids, { "Name": "a bee!" })
+    ec2_connection.create_tags(instance_ids, {"Name": "a bee!"})
 
     _write_server_list(username, key_name, zone, reservation.instances)
 
     print 'The swarm has assembled %i bees.' % len(reservation.instances)
+
 
 def report():
     """
@@ -171,7 +182,9 @@ def report():
         instances.extend(reservation.instances)
 
     for instance in instances:
-        print 'Bee %s: %s @ %s' % (instance.id, instance.state, instance.ip_address)
+        print ('Bee %s: %s @ %s' %
+               (instance.id, instance.state, instance.ip_address))
+
 
 def down():
     """
@@ -196,6 +209,7 @@ def down():
 
     _delete_server_list()
 
+
 def _attack(params):
     """
     Test the target URL with requests.
@@ -208,10 +222,14 @@ def _attack(params):
         client = paramiko.SSHClient()
         client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-        pem_path = params.get('key_name') and _get_pem_path(params['key_name']) or None
+        # ... oh the humanity ...
+        pem_path = (
+            params.get('key_name') and _get_pem_path(params['key_name'])
+            or None)
         if not os.path.isfile(pem_path):
             client.load_system_host_keys()
-            client.connect(params['instance_name'], username=params['username'])
+            client.connect(
+                params['instance_name'], username=params['username'])
         else:
             client.connect(
                 params['instance_name'],
@@ -231,7 +249,8 @@ def _attack(params):
         if params['csv_filename']:
             options += ' -e %(csv_filename)s' % params
         else:
-            print 'Bee %i lost sight of the target (connection timed out creating csv_filename).' % params['i']
+            print ('Bee %i lost sight of the target (connection timed out '
+                   'creating csv_filename).' % params['i'])
             return None
 
         if params['post_file']:
@@ -539,4 +558,3 @@ def attack(url, n, c, **options):
         else:
             print('Your targets performance tests meet our standards, the Queen sends her regards.')
             sys.exit(0)
-
