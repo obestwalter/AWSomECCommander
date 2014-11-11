@@ -6,6 +6,7 @@ import os
 from types import FunctionType, MethodType
 
 from plumbum import LocalPath
+from plumbum.path import LocalWorkdir
 
 
 log = logging.getLogger(__name__)
@@ -248,3 +249,25 @@ class BeeSting(Exception):
             except:
                 msg = "[PLEASE FIX MESSAGE]: %s %s" % (msg, str(args))
         Exception.__init__(self, msg)
+
+
+class LoggingConfig(object):
+    NAME = 'bees'
+
+    def __init__(self):
+        self.workPath = LocalWorkdir()
+        self.localLogPath = None
+        """:type: LocalPath"""
+
+    def init_logging(self, logLevel=logging.INFO, logToFile=True):
+        log.setLevel(logLevel)
+        self.localLogPath = self.workPath / (self.NAME + '.log')
+        fmt = ('%(asctime)s %(name)s %(funcName)s:%(lineno)d '
+               '%(levelname)s : %(message)s')
+        logging.basicConfig(format=fmt)
+        if logToFile:
+            fh = logging.FileHandler(filename=str(self.localLogPath))
+            fh.setFormatter(logging.Formatter(fmt))
+            log.addHandler(fh)
+        log.name = self.NAME if log.name == '__main__' else log.name
+        log.debug("working in %s", self.workPath)
