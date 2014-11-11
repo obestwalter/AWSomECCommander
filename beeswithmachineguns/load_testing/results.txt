@@ -1,0 +1,4505 @@
+100 * 10 bees firing 1000 requests with 100 concurrency
+
+/home/obestwalter/.virtenvs/update-bridge/bin/python /home/obestwalter/work/prodenv/beeswithmachineguns/beeswithmachineguns/old_bee_caller.py
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 9 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Bee 5 is out of ammo.
+Bee 7 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7996.950000 [#/sec] (mean of bees)
+     Time per request:		131.913800 [ms] (mean of bees)
+     50% responses faster than:	4.598000 [ms]
+     90% responses faster than:	7.866000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is out of ammo.
+Bee 8 is out of ammo.
+Bee 9 is out of ammo.
+Bee 3 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 4 is out of ammo.
+Bee 7 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	10653.700000 [#/sec] (mean of bees)
+     Time per request:		10.234200 [ms] (mean of bees)
+     50% responses faster than:	8.002000 [ms]
+     90% responses faster than:	16.482000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 6 is out of ammo.
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Bee 7 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5622.070000 [#/sec] (mean of bees)
+     Time per request:		40.953000 [ms] (mean of bees)
+     50% responses faster than:	12.545000 [ms]
+     90% responses faster than:	25.481000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 9 is out of ammo.
+Bee 3 is out of ammo.
+Bee 5 is out of ammo.
+Bee 0 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 8 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5956.920000 [#/sec] (mean of bees)
+     Time per request:		17.300600 [ms] (mean of bees)
+     50% responses faster than:	13.353000 [ms]
+     90% responses faster than:	29.935000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 3 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 2 is out of ammo.
+Bee 4 is out of ammo.
+Bee 7 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8780.040000 [#/sec] (mean of bees)
+     Time per request:		14.701000 [ms] (mean of bees)
+     50% responses faster than:	11.538000 [ms]
+     90% responses faster than:	24.011000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is out of ammo.
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Bee 6 is out of ammo.
+Bee 5 is out of ammo.
+Bee 4 is out of ammo.
+Bee 7 is out of ammo.
+Bee 1 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	3172.610000 [#/sec] (mean of bees)
+     Time per request:		294.987100 [ms] (mean of bees)
+     50% responses faster than:	7.281000 [ms]
+     90% responses faster than:	18.299000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!Bee 2 is firing her machine gun. Bang bang!
+
+Bee 9 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is out of ammo.
+Bee 6 is out of ammo.
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Bee 0 is out of ammo.
+Bee 2 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Bee 8 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	9390.320000 [#/sec] (mean of bees)
+     Time per request:		11.304400 [ms] (mean of bees)
+     50% responses faster than:	8.675000 [ms]
+     90% responses faster than:	18.845000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 9 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 9 is out of ammo.
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	10051.010000 [#/sec] (mean of bees)
+     Time per request:		11.728300 [ms] (mean of bees)
+     50% responses faster than:	8.745000 [ms]
+     90% responses faster than:	19.832000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Bee 0 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 2 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5968.030000 [#/sec] (mean of bees)
+     Time per request:		21.595800 [ms] (mean of bees)
+     50% responses faster than:	20.161000 [ms]
+     90% responses faster than:	37.477000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!Bee 0 is firing her machine gun. Bang bang!
+
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 5 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Bee 6 is out of ammo.
+Bee 4 is out of ammo.
+Bee 7 is out of ammo.
+Bee 1 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	3610.710000 [#/sec] (mean of bees)
+     Time per request:		62.643200 [ms] (mean of bees)
+     50% responses faster than:	16.379000 [ms]
+     90% responses faster than:	33.699000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 4 is out of ammo.
+Bee 0 is out of ammo.
+Bee 2 is out of ammo.
+Bee 9 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Bee 5 is out of ammo.
+Bee 7 is out of ammo.
+Bee 6 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5262.410000 [#/sec] (mean of bees)
+     Time per request:		19.295800 [ms] (mean of bees)
+     50% responses faster than:	14.359000 [ms]
+     90% responses faster than:	33.367000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 1 is out of ammo.
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7017.640000 [#/sec] (mean of bees)
+     Time per request:		16.026000 [ms] (mean of bees)
+     50% responses faster than:	12.065000 [ms]
+     90% responses faster than:	27.151000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6690.380000 [#/sec] (mean of bees)
+     Time per request:		16.624300 [ms] (mean of bees)
+     50% responses faster than:	12.018000 [ms]
+     90% responses faster than:	29.913000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 8 is out of ammo.
+Bee 9 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	11356.660000 [#/sec] (mean of bees)
+     Time per request:		9.350300 [ms] (mean of bees)
+     50% responses faster than:	7.981000 [ms]
+     90% responses faster than:	13.513000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 8 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6066.060000 [#/sec] (mean of bees)
+     Time per request:		17.104400 [ms] (mean of bees)
+     50% responses faster than:	12.128000 [ms]
+     90% responses faster than:	32.907000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is out of ammo.
+Bee 5 is out of ammo.
+Bee 4 is out of ammo.
+Bee 0 is out of ammo.
+Bee 2 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Bee 6 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7464.920000 [#/sec] (mean of bees)
+     Time per request:		14.179600 [ms] (mean of bees)
+     50% responses faster than:	10.003000 [ms]
+     90% responses faster than:	24.792000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 5 is joining the swarm.Bee 4 is joining the swarm.
+
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 3 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Bee 9 is out of ammo.
+Bee 6 is out of ammo.
+Bee 5 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	10679.790000 [#/sec] (mean of bees)
+     Time per request:		9.610400 [ms] (mean of bees)
+     50% responses faster than:	7.856000 [ms]
+     90% responses faster than:	13.587000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Bee 2 is out of ammo.
+Bee 4 is out of ammo.
+Bee 1 is out of ammo.
+Bee 7 is out of ammo.
+Bee 5 is out of ammo.
+Bee 6 is out of ammo.
+Bee 9 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6340.670000 [#/sec] (mean of bees)
+     Time per request:		27.762200 [ms] (mean of bees)
+     50% responses faster than:	9.985000 [ms]
+     90% responses faster than:	21.521000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is out of ammo.
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 0 is out of ammo.
+Bee 8 is out of ammo.
+Bee 6 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5141.490000 [#/sec] (mean of bees)
+     Time per request:		34.924400 [ms] (mean of bees)
+     50% responses faster than:	14.454000 [ms]
+     90% responses faster than:	31.236000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 6 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	10495.190000 [#/sec] (mean of bees)
+     Time per request:		9.711600 [ms] (mean of bees)
+     50% responses faster than:	7.877000 [ms]
+     90% responses faster than:	13.433000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!Bee 0 is firing her machine gun. Bang bang!
+
+Bee 4 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 2 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Bee 6 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8529.190000 [#/sec] (mean of bees)
+     Time per request:		12.204800 [ms] (mean of bees)
+     50% responses faster than:	8.949000 [ms]
+     90% responses faster than:	18.531000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 6 is out of ammo.
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Bee 0 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7466.030000 [#/sec] (mean of bees)
+     Time per request:		15.040700 [ms] (mean of bees)
+     50% responses faster than:	12.666000 [ms]
+     90% responses faster than:	22.811000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 6 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 4 is out of ammo.
+Bee 0 is out of ammo.
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 5 is out of ammo.
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	9374.750000 [#/sec] (mean of bees)
+     Time per request:		13.970100 [ms] (mean of bees)
+     50% responses faster than:	12.315000 [ms]
+     90% responses faster than:	23.662000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 6 is out of ammo.
+Bee 7 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5379.270000 [#/sec] (mean of bees)
+     Time per request:		19.340600 [ms] (mean of bees)
+     50% responses faster than:	17.098000 [ms]
+     90% responses faster than:	29.668000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 5 is out of ammo.
+Bee 6 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8951.210000 [#/sec] (mean of bees)
+     Time per request:		13.298700 [ms] (mean of bees)
+     50% responses faster than:	10.795000 [ms]
+     90% responses faster than:	20.513000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 6 is out of ammo.
+Bee 5 is out of ammo.
+Bee 0 is out of ammo.
+Bee 4 is out of ammo.
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 2 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	1923.250000 [#/sec] (mean of bees)
+     Time per request:		172.891400 [ms] (mean of bees)
+     50% responses faster than:	12.540000 [ms]
+     90% responses faster than:	50.121000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!Bee 3 is firing her machine gun. Bang bang!Bee 6 is firing her machine gun. Bang bang!Bee 5 is firing her machine gun. Bang bang!Bee 8 is firing her machine gun. Bang bang!
+
+
+
+
+Bee 9 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is out of ammo.
+Bee 6 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6010.200000 [#/sec] (mean of bees)
+     Time per request:		19.503500 [ms] (mean of bees)
+     50% responses faster than:	18.124000 [ms]
+     90% responses faster than:	29.855000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 6 is out of ammo.
+Bee 4 is out of ammo.
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Bee 9 is out of ammo.
+Bee 0 is out of ammo.
+Bee 1 is out of ammo.
+Bee 7 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8209.380000 [#/sec] (mean of bees)
+     Time per request:		16.641400 [ms] (mean of bees)
+     50% responses faster than:	18.114000 [ms]
+     90% responses faster than:	24.931000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 6 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Bee 2 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	3959.840000 [#/sec] (mean of bees)
+     Time per request:		44.218800 [ms] (mean of bees)
+     50% responses faster than:	19.753000 [ms]
+     90% responses faster than:	38.758000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 9 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 1 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	12184.040000 [#/sec] (mean of bees)
+     Time per request:		8.857200 [ms] (mean of bees)
+     50% responses faster than:	7.082000 [ms]
+     90% responses faster than:	14.026000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is out of ammo.
+Bee 7 is out of ammo.
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	9373.560000 [#/sec] (mean of bees)
+     Time per request:		11.360900 [ms] (mean of bees)
+     50% responses faster than:	8.188000 [ms]
+     90% responses faster than:	18.618000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Bee 2 is out of ammo.
+Bee 5 is out of ammo.
+Bee 4 is out of ammo.
+Bee 0 is out of ammo.
+Bee 7 is out of ammo.
+Bee 6 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	3007.040000 [#/sec] (mean of bees)
+     Time per request:		135.941100 [ms] (mean of bees)
+     50% responses faster than:	13.443000 [ms]
+     90% responses faster than:	32.255000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 5 is out of ammo.
+Bee 7 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7073.280000 [#/sec] (mean of bees)
+     Time per request:		15.979900 [ms] (mean of bees)
+     50% responses faster than:	12.211000 [ms]
+     90% responses faster than:	27.760000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Bee 7 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6096.150000 [#/sec] (mean of bees)
+     Time per request:		16.898500 [ms] (mean of bees)
+     50% responses faster than:	12.277000 [ms]
+     90% responses faster than:	30.005000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 4 is out of ammo.
+Bee 9 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	4992.200000 [#/sec] (mean of bees)
+     Time per request:		64.312100 [ms] (mean of bees)
+     50% responses faster than:	16.178000 [ms]
+     90% responses faster than:	27.831000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 2 is out of ammo.
+Bee 1 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6167.420000 [#/sec] (mean of bees)
+     Time per request:		17.139700 [ms] (mean of bees)
+     50% responses faster than:	13.399000 [ms]
+     90% responses faster than:	29.883000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 9 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 8 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	10491.600000 [#/sec] (mean of bees)
+     Time per request:		10.491100 [ms] (mean of bees)
+     50% responses faster than:	7.161000 [ms]
+     90% responses faster than:	17.326000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 7 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	11045.010000 [#/sec] (mean of bees)
+     Time per request:		10.741500 [ms] (mean of bees)
+     50% responses faster than:	7.834000 [ms]
+     90% responses faster than:	17.710000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 3 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6205.130000 [#/sec] (mean of bees)
+     Time per request:		28.671400 [ms] (mean of bees)
+     50% responses faster than:	34.767000 [ms]
+     90% responses faster than:	45.352000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 7 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Bee 8 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6707.120000 [#/sec] (mean of bees)
+     Time per request:		17.301500 [ms] (mean of bees)
+     50% responses faster than:	17.308000 [ms]
+     90% responses faster than:	28.109000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 7 is out of ammo.
+Bee 0 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8287.400000 [#/sec] (mean of bees)
+     Time per request:		14.313100 [ms] (mean of bees)
+     50% responses faster than:	11.087000 [ms]
+     90% responses faster than:	22.995000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!Bee 8 is firing her machine gun. Bang bang!
+
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 5 is out of ammo.
+Bee 0 is out of ammo.
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 2 is out of ammo.
+Bee 4 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6505.430000 [#/sec] (mean of bees)
+     Time per request:		17.420700 [ms] (mean of bees)
+     50% responses faster than:	16.189000 [ms]
+     90% responses faster than:	26.906000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Bee 8 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	9152.500000 [#/sec] (mean of bees)
+     Time per request:		12.888700 [ms] (mean of bees)
+     50% responses faster than:	10.665000 [ms]
+     90% responses faster than:	21.282000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 7 is out of ammo.Bee 1 is out of ammo.
+
+Bee 4 is out of ammo.
+Bee 8 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5560.660000 [#/sec] (mean of bees)
+     Time per request:		25.911300 [ms] (mean of bees)
+     50% responses faster than:	29.884000 [ms]
+     90% responses faster than:	40.524000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 5 is out of ammo.
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6888.470000 [#/sec] (mean of bees)
+     Time per request:		26.719900 [ms] (mean of bees)
+     50% responses faster than:	27.845000 [ms]
+     90% responses faster than:	45.376000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!Bee 5 is firing her machine gun. Bang bang!
+
+Bee 9 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!Bee 8 is firing her machine gun. Bang bang!
+
+Bee 9 is out of ammo.
+Bee 3 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 2 is out of ammo.
+Bee 4 is out of ammo.
+Bee 6 is out of ammo.
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Bee 7 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		36
+     Requests per second:	3047.590000 [#/sec] (mean of bees)
+     Time per request:		245.477500 [ms] (mean of bees)
+     50% responses faster than:	23.996000 [ms]
+     90% responses faster than:	44.001000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 4 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 1 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6871.140000 [#/sec] (mean of bees)
+     Time per request:		15.189900 [ms] (mean of bees)
+     50% responses faster than:	11.517000 [ms]
+     90% responses faster than:	28.479000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 4 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	9427.460000 [#/sec] (mean of bees)
+     Time per request:		10.771100 [ms] (mean of bees)
+     50% responses faster than:	8.068000 [ms]
+     90% responses faster than:	17.359000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 2 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8206.970000 [#/sec] (mean of bees)
+     Time per request:		14.790600 [ms] (mean of bees)
+     50% responses faster than:	11.449000 [ms]
+     90% responses faster than:	29.554000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 6 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 1 is out of ammo.
+Bee 5 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6884.890000 [#/sec] (mean of bees)
+     Time per request:		16.686000 [ms] (mean of bees)
+     50% responses faster than:	12.238000 [ms]
+     90% responses faster than:	32.701000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Bee 5 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5638.400000 [#/sec] (mean of bees)
+     Time per request:		18.065600 [ms] (mean of bees)
+     50% responses faster than:	14.848000 [ms]
+     90% responses faster than:	31.168000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Bee 7 is out of ammo.
+Bee 5 is out of ammo.
+Bee 4 is out of ammo.
+Bee 6 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	11617.970000 [#/sec] (mean of bees)
+     Time per request:		9.670400 [ms] (mean of bees)
+     50% responses faster than:	7.398000 [ms]
+     90% responses faster than:	14.650000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 1 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 8 is out of ammo.
+Bee 6 is out of ammo.
+Bee 4 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6234.320000 [#/sec] (mean of bees)
+     Time per request:		22.165100 [ms] (mean of bees)
+     50% responses faster than:	20.039000 [ms]
+     90% responses faster than:	35.134000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 1 is out of ammo.
+Bee 9 is out of ammo.
+Bee 0 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7048.610000 [#/sec] (mean of bees)
+     Time per request:		15.940100 [ms] (mean of bees)
+     50% responses faster than:	12.118000 [ms]
+     90% responses faster than:	23.764000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!Bee 0 is firing her machine gun. Bang bang!
+
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 0 is out of ammo.
+Bee 1 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 8 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7328.270000 [#/sec] (mean of bees)
+     Time per request:		17.311700 [ms] (mean of bees)
+     50% responses faster than:	15.107000 [ms]
+     90% responses faster than:	28.138000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 7 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 0 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7688.410000 [#/sec] (mean of bees)
+     Time per request:		13.714800 [ms] (mean of bees)
+     50% responses faster than:	9.017000 [ms]
+     90% responses faster than:	25.239000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 1 is out of ammo.
+Bee 5 is out of ammo.
+Bee 6 is out of ammo.
+Bee 2 is out of ammo.
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	2627.470000 [#/sec] (mean of bees)
+     Time per request:		209.632800 [ms] (mean of bees)
+     50% responses faster than:	11.984000 [ms]
+     90% responses faster than:	31.620000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 6 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5203.250000 [#/sec] (mean of bees)
+     Time per request:		19.485200 [ms] (mean of bees)
+     50% responses faster than:	17.309000 [ms]
+     90% responses faster than:	29.160000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 3 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Bee 4 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6932.800000 [#/sec] (mean of bees)
+     Time per request:		15.326100 [ms] (mean of bees)
+     50% responses faster than:	14.382000 [ms]
+     90% responses faster than:	21.839000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 0 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 3 is out of ammo.
+Bee 4 is out of ammo.
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Bee 7 is out of ammo.
+Bee 5 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	3152.810000 [#/sec] (mean of bees)
+     Time per request:		32.055700 [ms] (mean of bees)
+     50% responses faster than:	28.011000 [ms]
+     90% responses faster than:	58.932000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Bee 1 is out of ammo.
+Bee 5 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	4304.770000 [#/sec] (mean of bees)
+     Time per request:		23.439800 [ms] (mean of bees)
+     50% responses faster than:	24.399000 [ms]
+     90% responses faster than:	28.421000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is out of ammo.
+Bee 9 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 6 is out of ammo.
+Bee 8 is out of ammo.
+Bee 5 is out of ammo.
+Bee 4 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	1596.420000 [#/sec] (mean of bees)
+     Time per request:		435.152800 [ms] (mean of bees)
+     50% responses faster than:	7.345000 [ms]
+     90% responses faster than:	16.947000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 9 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Bee 8 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	10117.700000 [#/sec] (mean of bees)
+     Time per request:		9.963800 [ms] (mean of bees)
+     50% responses faster than:	8.158000 [ms]
+     90% responses faster than:	14.491000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Bee 2 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	3810.880000 [#/sec] (mean of bees)
+     Time per request:		26.242400 [ms] (mean of bees)
+     50% responses faster than:	21.171000 [ms]
+     90% responses faster than:	37.599000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 1 is out of ammo.
+Bee 0 is out of ammo.
+Bee 6 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.Bee 5 is out of ammo.
+Bee 3 is out of ammo.
+
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	4904.200000 [#/sec] (mean of bees)
+     Time per request:		20.719600 [ms] (mean of bees)
+     50% responses faster than:	17.017000 [ms]
+     90% responses faster than:	37.300000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 7 is out of ammo.
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6878.860000 [#/sec] (mean of bees)
+     Time per request:		15.980300 [ms] (mean of bees)
+     50% responses faster than:	11.527000 [ms]
+     90% responses faster than:	26.057000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 5 is out of ammo.Bee 0 is out of ammo.
+
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 1 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7764.480000 [#/sec] (mean of bees)
+     Time per request:		14.212700 [ms] (mean of bees)
+     50% responses faster than:	10.574000 [ms]
+     90% responses faster than:	23.920000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 6 is out of ammo.
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Bee 0 is out of ammo.
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7084.320000 [#/sec] (mean of bees)
+     Time per request:		14.804500 [ms] (mean of bees)
+     50% responses faster than:	10.089000 [ms]
+     90% responses faster than:	28.225000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 6 is out of ammo.
+Bee 5 is out of ammo.
+Bee 0 is out of ammo.
+Bee 8 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	11276.240000 [#/sec] (mean of bees)
+     Time per request:		9.370800 [ms] (mean of bees)
+     50% responses faster than:	7.699000 [ms]
+     90% responses faster than:	13.773000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 7 is out of ammo.
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 6 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5365.630000 [#/sec] (mean of bees)
+     Time per request:		144.144100 [ms] (mean of bees)
+     50% responses faster than:	6.960000 [ms]
+     90% responses faster than:	16.627000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 4 is out of ammo.
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	10292.580000 [#/sec] (mean of bees)
+     Time per request:		11.040000 [ms] (mean of bees)
+     50% responses faster than:	7.460000 [ms]
+     90% responses faster than:	18.865000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Bee 9 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7165.080000 [#/sec] (mean of bees)
+     Time per request:		20.341100 [ms] (mean of bees)
+     50% responses faster than:	11.441000 [ms]
+     90% responses faster than:	28.212000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Bee 9 is out of ammo.
+Bee 6 is out of ammo.
+Bee 4 is out of ammo.
+Bee 8 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8105.930000 [#/sec] (mean of bees)
+     Time per request:		12.974600 [ms] (mean of bees)
+     50% responses faster than:	9.195000 [ms]
+     90% responses faster than:	20.827000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 4 is out of ammo.
+Bee 9 is out of ammo.
+Bee 5 is out of ammo.
+Bee 7 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	3837.000000 [#/sec] (mean of bees)
+     Time per request:		33.755800 [ms] (mean of bees)
+     50% responses faster than:	18.148000 [ms]
+     90% responses faster than:	43.534000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 5 is out of ammo.
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 4 is out of ammo.
+Bee 0 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	11149.960000 [#/sec] (mean of bees)
+     Time per request:		10.132800 [ms] (mean of bees)
+     50% responses faster than:	7.277000 [ms]
+     90% responses faster than:	16.037000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 6 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is out of ammo.
+Bee 0 is out of ammo.
+Bee 7 is out of ammo.
+Bee 5 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	10215.130000 [#/sec] (mean of bees)
+     Time per request:		12.510200 [ms] (mean of bees)
+     50% responses faster than:	8.594000 [ms]
+     90% responses faster than:	24.440000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 3 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8195.350000 [#/sec] (mean of bees)
+     Time per request:		14.382200 [ms] (mean of bees)
+     50% responses faster than:	10.062000 [ms]
+     90% responses faster than:	26.226000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Bee 6 is out of ammo.
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Bee 4 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	10883.690000 [#/sec] (mean of bees)
+     Time per request:		11.544100 [ms] (mean of bees)
+     50% responses faster than:	7.914000 [ms]
+     90% responses faster than:	21.253000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 8 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8997.400000 [#/sec] (mean of bees)
+     Time per request:		49.286600 [ms] (mean of bees)
+     50% responses faster than:	7.333000 [ms]
+     90% responses faster than:	15.852000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Bee 4 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 9 is out of ammo.
+Bee 7 is out of ammo.
+Bee 8 is out of ammo.
+Bee 2 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5564.010000 [#/sec] (mean of bees)
+     Time per request:		115.070000 [ms] (mean of bees)
+     50% responses faster than:	7.488000 [ms]
+     90% responses faster than:	19.950000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 1 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 7 is out of ammo.
+Bee 6 is out of ammo.
+Bee 5 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6653.040000 [#/sec] (mean of bees)
+     Time per request:		15.734100 [ms] (mean of bees)
+     50% responses faster than:	11.187000 [ms]
+     90% responses faster than:	31.853000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 1 is out of ammo.
+Bee 5 is out of ammo.
+Bee 7 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8587.570000 [#/sec] (mean of bees)
+     Time per request:		13.017000 [ms] (mean of bees)
+     50% responses faster than:	8.932000 [ms]
+     90% responses faster than:	22.584000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 0 is out of ammo.
+Bee 2 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	2143.180000 [#/sec] (mean of bees)
+     Time per request:		183.536100 [ms] (mean of bees)
+     50% responses faster than:	13.045000 [ms]
+     90% responses faster than:	37.887000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Bee 4 is out of ammo.
+Bee 6 is out of ammo.
+Bee 7 is out of ammo.
+Bee 2 is out of ammo.Bee 5 is out of ammo.
+
+Bee 8 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	2670.380000 [#/sec] (mean of bees)
+     Time per request:		38.054200 [ms] (mean of bees)
+     50% responses faster than:	14.700000 [ms]
+     90% responses faster than:	57.393000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 5 is out of ammo.
+Bee 4 is out of ammo.
+Bee 1 is out of ammo.
+Bee 9 is out of ammo.
+Bee 0 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7747.310000 [#/sec] (mean of bees)
+     Time per request:		14.630000 [ms] (mean of bees)
+     50% responses faster than:	9.955000 [ms]
+     90% responses faster than:	25.638000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 8 is out of ammo.
+Bee 5 is out of ammo.
+Bee 7 is out of ammo.
+Bee 0 is out of ammo.
+Bee 4 is out of ammo.
+Bee 1 is out of ammo.
+Bee 9 is out of ammo.
+Bee 6 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5509.990000 [#/sec] (mean of bees)
+     Time per request:		21.464900 [ms] (mean of bees)
+     50% responses faster than:	12.229000 [ms]
+     90% responses faster than:	35.702000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 2 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 4 is out of ammo.
+Bee 8 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Bee 0 is out of ammo.
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 6 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	4369.300000 [#/sec] (mean of bees)
+     Time per request:		64.050500 [ms] (mean of bees)
+     50% responses faster than:	13.718000 [ms]
+     90% responses faster than:	30.707000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 2 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 4 is out of ammo.
+Bee 1 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 6 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	7629.100000 [#/sec] (mean of bees)
+     Time per request:		14.395900 [ms] (mean of bees)
+     50% responses faster than:	11.442000 [ms]
+     90% responses faster than:	22.591000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 2 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5669.570000 [#/sec] (mean of bees)
+     Time per request:		18.152900 [ms] (mean of bees)
+     50% responses faster than:	13.634000 [ms]
+     90% responses faster than:	35.230000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 2 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 0 is out of ammo.
+Bee 9 is out of ammo.
+Bee 7 is out of ammo.
+Bee 8 is out of ammo.
+Bee 3 is out of ammo.
+Bee 6 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8782.390000 [#/sec] (mean of bees)
+     Time per request:		12.773100 [ms] (mean of bees)
+     50% responses faster than:	9.086000 [ms]
+     90% responses faster than:	23.623000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 3 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 8 is out of ammo.
+Bee 3 is out of ammo.
+Bee 6 is out of ammo.
+Bee 9 is out of ammo.
+Bee 1 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	9571.760000 [#/sec] (mean of bees)
+     Time per request:		11.874600 [ms] (mean of bees)
+     50% responses faster than:	8.634000 [ms]
+     90% responses faster than:	21.066000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 2 is out of ammo.
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Bee 7 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	4008.170000 [#/sec] (mean of bees)
+     Time per request:		24.975200 [ms] (mean of bees)
+     50% responses faster than:	19.171000 [ms]
+     90% responses faster than:	46.009000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 2 is out of ammo.
+Bee 0 is out of ammo.
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	13017.050000 [#/sec] (mean of bees)
+     Time per request:		9.591300 [ms] (mean of bees)
+     50% responses faster than:	6.462000 [ms]
+     90% responses faster than:	14.643000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 8 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 4 is out of ammo.
+Bee 9 is out of ammo.
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 6 is out of ammo.
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Bee 2 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	5218.310000 [#/sec] (mean of bees)
+     Time per request:		39.211400 [ms] (mean of bees)
+     50% responses faster than:	13.854000 [ms]
+     90% responses faster than:	27.099000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 6 is out of ammo.
+Bee 0 is out of ammo.
+Bee 3 is out of ammo.
+Bee 7 is out of ammo.
+Bee 8 is out of ammo.
+Bee 1 is out of ammo.
+Bee 2 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	4706.820000 [#/sec] (mean of bees)
+     Time per request:		42.269100 [ms] (mean of bees)
+     50% responses faster than:	13.836000 [ms]
+     90% responses faster than:	38.231000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 6 is out of ammo.
+Bee 2 is out of ammo.
+Bee 4 is out of ammo.
+Bee 7 is out of ammo.
+Bee 5 is out of ammo.
+Bee 1 is out of ammo.
+Bee 8 is out of ammo.
+Bee 9 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6789.010000 [#/sec] (mean of bees)
+     Time per request:		15.889500 [ms] (mean of bees)
+     50% responses faster than:	10.885000 [ms]
+     90% responses faster than:	28.690000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 1 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 1 is out of ammo.
+Bee 0 is out of ammo.
+Bee 5 is out of ammo.
+Bee 3 is out of ammo.
+Bee 4 is out of ammo.
+Bee 8 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	9722.380000 [#/sec] (mean of bees)
+     Time per request:		11.106700 [ms] (mean of bees)
+     50% responses faster than:	8.218000 [ms]
+     90% responses faster than:	18.973000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 7 is out of ammo.
+Bee 8 is out of ammo.
+Bee 2 is out of ammo.
+Bee 1 is out of ammo.
+Bee 4 is out of ammo.
+Bee 0 is out of ammo.
+Bee 6 is out of ammo.
+Bee 5 is out of ammo.
+Bee 3 is out of ammo.
+Bee 9 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	10745.080000 [#/sec] (mean of bees)
+     Time per request:		11.650600 [ms] (mean of bees)
+     50% responses faster than:	7.984000 [ms]
+     90% responses faster than:	21.911000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 5 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 0 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 0 is out of ammo.
+Bee 7 is out of ammo.
+Bee 6 is out of ammo.
+Bee 8 is out of ammo.
+Bee 5 is out of ammo.
+Bee 4 is out of ammo.
+Bee 9 is out of ammo.
+Bee 2 is out of ammo.
+Bee 1 is out of ammo.
+Bee 3 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	8187.900000 [#/sec] (mean of bees)
+     Time per request:		12.550900 [ms] (mean of bees)
+     50% responses faster than:	7.927000 [ms]
+     90% responses faster than:	24.176000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+Read 10 bees from the roster.
+Connecting to the hive.
+Assembling bees.
+Each of 10 bees will fire 100 rounds, 10 at a time.
+Stinging URL so it will be cached for the attack.
+Organizing the swarm.
+Bee 0 is joining the swarm.
+Bee 1 is joining the swarm.
+Bee 2 is joining the swarm.
+Bee 3 is joining the swarm.
+Bee 4 is joining the swarm.
+Bee 5 is joining the swarm.
+Bee 6 is joining the swarm.
+Bee 7 is joining the swarm.
+Bee 8 is joining the swarm.
+Bee 9 is joining the swarm.
+Bee 0 is firing her machine gun. Bang bang!
+Bee 9 is firing her machine gun. Bang bang!
+Bee 2 is firing her machine gun. Bang bang!
+Bee 4 is firing her machine gun. Bang bang!
+Bee 1 is firing her machine gun. Bang bang!
+Bee 7 is firing her machine gun. Bang bang!
+Bee 8 is firing her machine gun. Bang bang!
+Bee 5 is firing her machine gun. Bang bang!
+Bee 6 is firing her machine gun. Bang bang!
+Bee 3 is firing her machine gun. Bang bang!
+Bee 8 is out of ammo.
+Bee 0 is out of ammo.
+Bee 9 is out of ammo.
+Bee 4 is out of ammo.
+Bee 5 is out of ammo.
+Bee 2 is out of ammo.
+Bee 6 is out of ammo.
+Bee 7 is out of ammo.
+Bee 3 is out of ammo.
+Bee 1 is out of ammo.
+Offensive complete.
+     Complete requests:		1000
+     Failed requests:		0
+     Requests per second:	6015.990000 [#/sec] (mean of bees)
+     Time per request:		18.626600 [ms] (mean of bees)
+     50% responses faster than:	11.046000 [ms]
+     90% responses faster than:	29.716000 [ms]
+Mission Assessment: Target crushed bee offensive.
+The swarm is awaiting new orders.
+
+Process finished with exit code 0

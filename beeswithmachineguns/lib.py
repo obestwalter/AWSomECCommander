@@ -1,9 +1,66 @@
+import functools
 import inspect
+import json
 import logging
 import os
 from types import FunctionType, MethodType
 
+from plumbum import LocalPath
+
+
 log = logging.getLogger(__name__)
+
+__all__ = [
+    'JsonConfigger',
+    'oa',
+    'oac',
+    'obj_attr',
+    'cached_property',
+    'expire_cached_properties',
+    'caller',
+]
+
+
+class JsonConfigger(object):
+    def __init__(self, configPath):
+        self._configPath = LocalPath(configPath)
+
+    def load_config(self):
+        config = json.loads(self._configPath.read())
+        for key, value in config.items():
+            log.debug("read from _config: %s <- %s", key, value)
+            setattr(self, key, value)
+
+    def save_config(self):
+        self._configPath.write(json.dumps(self.as_dict()))
+
+    def remove_config(self):
+        self._configPath.delete()
+
+    def as_dict(self):
+        config = {k: self._nrmlz(v) for k, v in self.__dict__.items()
+                  if not k.startswith('_')}
+        props = {k: self._nrmlz(getattr(self, k)) for k in self._publicProps}
+        config.update(props.items())
+        return config
+
+    @property
+    def _publicProps(self):
+        return [name for (name, member) in inspect.getmembers(self.__class__)
+                if not name.startswith('_') and type(member) == property]
+
+    def _nrmlz(self, value):
+        """normalize strange things to json compatible values"""
+        if isinstance(value, str):
+            return value
+
+        if isinstance(value, LocalPath):
+            return str(value)
+
+        if isinstance(value, list):
+            return [self._nrmlz(v) for v in value]
+
+        return value
 
 
 SPECIAL_ATTR_NAMES = [
@@ -19,7 +76,7 @@ def obj_attr(obj, hideString='', filterMethods=True, filterPrivate=True,
     try:
         if any(isinstance(obj, t) for t in SIMPLE_OBJECTS):
             return ("[simple obj_attr] %s (%s): %s" %
-                       (objName or "(anon)", type(obj).__name__, str(obj)))
+                    (objName or "(anon)", type(obj).__name__, str(obj)))
 
         return _obj_attr(
             obj, hideString, filterMethods, filterPrivate,
@@ -95,8 +152,9 @@ def _prepare_content(contentTuple):
         return pattern % (value)
 
     windowSize = 80
-    lines = [pattern % value[:windowSize]]
-    curPos = windowSize
+    firstLineLength = len(pattern) - 7
+    curPos = windowSize - firstLineLength
+    lines = [pattern % value[:curPos]]
     while True:
         curString = value[curPos:curPos + windowSize]
         if not curString:
@@ -123,3 +181,61 @@ def caller(depth=1):
             if depth == 1:
                 log.error("caller failed", exc_info=True)
     return "unknown caller"
+
+
+def oa(obj):
+    return obj_attr(obj)
+
+
+def oac(obj):
+    return obj_attr(obj, filterMethods=False, filterPrivate=False)
+
+
+def cached_property(meth):
+    """Cache this property until the cache is expired explicitly"""
+    @property
+    @functools.wraps(meth)
+    def _cached_property(self):
+        try:
+            return self._propertyCache[meth]
+
+        except AttributeError:
+            self._propertyCache = {}
+            result = self._propertyCache[meth] = meth(self)
+            return result
+
+        except KeyError:
+            result = self._propertyCache[meth] = meth(self)
+            return result
+
+    return _cached_property
+
+
+def expire_cached_properties(meth):
+    """if this method is called all cached properties are expired"""
+    @functools.wraps(meth)
+    def _expire_cached_properties(self, *args, **kwargs):
+        cache = getattr(self, "_propertyCache", None)
+        if type(cache) == dict:
+            #print(cache)
+            cache.clear()
+            #print("expired %s.propertyCache" % (self.__class__.__name__))
+        return meth(self, *args, **kwargs)
+
+    return _expire_cached_properties
+
+
+class BeeSting(Exception):
+    """For exceptions raised by this module
+
+    Provides log style message passing like::
+
+            raise BeeSting("%s bla %s", arg1, arg2)
+    """
+    def __init__(self, msg, *args):
+        if args:
+            try:
+                msg = msg % (args)
+            except:
+                msg = "[PLEASE FIX MESSAGE]: %s %s" % (msg, str(args))
+        Exception.__init__(self, msg)
