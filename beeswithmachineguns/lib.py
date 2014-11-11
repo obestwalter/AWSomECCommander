@@ -23,21 +23,22 @@ __all__ = [
 
 class JsonConfigger(object):
     def __init__(self, configPath):
-        self._configPath = LocalPath(configPath)
+        self._path = LocalPath(configPath)
 
     def load_config(self):
-        config = json.loads(self._configPath.read())
+        config = json.loads(self._path.read())
         for key, value in config.items():
             log.debug("read from _config: %s <- %s", key, value)
             setattr(self, key, value)
 
     def save_config(self):
-        self._configPath.write(json.dumps(self.as_dict()))
+        self._path.write(json.dumps(self.asDict, indent=True))
 
     def remove_config(self):
-        self._configPath.delete()
+        self._path.delete()
 
-    def as_dict(self):
+    @property
+    def asDict(self):
         config = {k: self._nrmlz(v) for k, v in self.__dict__.items()
                   if not k.startswith('_')}
         props = {k: self._nrmlz(getattr(self, k)) for k in self._publicProps}
@@ -47,13 +48,11 @@ class JsonConfigger(object):
     @property
     def _publicProps(self):
         return [name for (name, member) in inspect.getmembers(self.__class__)
-                if not name.startswith('_') and type(member) == property]
+                if not name.startswith('_') and name != 'asDict' and
+                type(member) == property]
 
     def _nrmlz(self, value):
         """normalize strange things to json compatible values"""
-        if isinstance(value, str):
-            return value
-
         if isinstance(value, LocalPath):
             return str(value)
 
