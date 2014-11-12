@@ -195,11 +195,11 @@ class SwarmMemory(beelib.JsonStorage):
 class BattlePlan(beelib.JsonStorage):
     NAME = 'bees_battle_plan.json'
     DEFAULTS = dict(
-        url='update-bridge-oliver-y5rxgpaear.elasticbeanstalk.com',
+        url='http://update-bridge-oliver-y5rxgpaear.elasticbeanstalk.com/',
         numberOfRequests=100,
         concurrency=10,
         postfilePath='bees_post_data.json',
-        mimeType='application/json; charset=UTF-8')
+        mimeType='application/json;charset=UTF-8')
 
     def __init__(self):
         super(BattlePlan, self).__init__(self.NAME)
@@ -217,22 +217,23 @@ class BattlePlan(beelib.JsonStorage):
 
 
 class BattleCry(object):
-    def __init__(self, cmd='ab'):
+    def __init__(self, command='ab'):
         super(BattleCry, self).__init__()
-        self._cmd = cmd
+        self.command = command
         self._elems = []
 
-    def enhance(self, fragment):
+    def specify(self, fragment):
         self._elems.extend(fragment.split(' '))
 
-    def enunciate(self):
-        return [self._cmd] + self._elems
+    @property
+    def specifics(self):
+        return self._elems
 
     def __str__(self):
-        return '%s %s' % (self._cmd, ' '.join(self._elems))
+        return '%s %s' % (self.command, ' '.join(self._elems))
 
 
-class BeeWisperer(object):
+class BeeWhisperer(object):
     DEFAULT_USER = 'newsapps'
 
     # todo swarm? instance?
@@ -257,20 +258,20 @@ class BeeWisperer(object):
         self._create_exchange_file()
         if self.battlePlan.postfilePath:
             self._prepare_post()
-        self.battleCry.enhance('http://avira.com/')
+        self.battleCry.specify(self.battlePlan.url)
 
     def _create_exchange_file(self):
         tmpFilePath = self.remote['mktemp']().strip()
-        self.battleCry.enhance('-e %s' % (tmpFilePath))
+        self.battleCry.specify('-e %s' % (tmpFilePath))
 
     def _prepare_post(self):
         plumbum_utils.copy(self.battlePlan.postfilePath, self.remote.cwd)
-        self.battleCry.enhance(
+        self.battleCry.specify(
             '-T "%s" -p %s' %
             (self.battlePlan.mimeType,
              self.battlePlan.postfilePath.basename))
 
-    def attack(self):
+    def whisper(self):
         """
         params.append({
         'i': i,
@@ -292,9 +293,7 @@ class BeeWisperer(object):
         })
         """
         with SshMachine(**self._sshKwargs) as rem:
-            plumbum_utils.copy(self.battlePlan.postfilePath, rem.cwd)
-            # print rem['ab']('-n 1000 -c 200 -u http://google.de/'.split(' '))
-            print rem['ls']('-la')
+            print rem[self.battleCry.command](self.battleCry.specifics)
         # todo just fetch raw data for starters
 
     @beelib.cached_property
