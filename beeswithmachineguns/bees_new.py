@@ -19,8 +19,6 @@ import os
 
 import boto
 import boto.ec2
-from boto.ec2.ec2object import EC2Object
-from plumbum import SshMachine
 from plumbum.path import LocalPath, LocalWorkdir
 import plumbum.path.utils as plumbum_utils
 
@@ -31,9 +29,8 @@ log = logging.getLogger('bees')
 
 
 class Beekeeper(object):
-    def __init__(self, cnf=None, mem=None, connection=None):
+    def __init__(self, cnf=None, connection=None):
         self.cnf = cnf or Config()
-        self.mem = mem or SwarmMemory()
         self.connection = connection
         self.swarm = None
         self.healthcheck()
@@ -43,15 +40,38 @@ class Beekeeper(object):
 
     def attack(self):
         pass
+        """
+        params.append({
+        'i': i,
+        'instance_id': instance.id,
+        'instance_name': instance.public_dns_name,
+        'url': url,
+        'concurrent_requests': connections_per_instance,
+        'num_requests': requests_per_instance,
+        'username': username,
+        'key_name': key_name,
+        'headers': headers,
+        'cookies': cookies,
+        'post_file': options.get('post_file'),
+        'keep_alive': options.get('keep_alive'),
+        'mime_type': options.get('mime_type', ''),
+        'tpr': options.get('tpr'),
+        'rps': options.get('rps'),
+        'basic_auth': options.get('basic_auth')
+        })
+        """
+        # print self.remote[self.battleCry.command](self.battleCry.specifics)
+        # todo just fetch raw data for starters
 
     def down(self):
         self._find_bees(nocreate=True)
         self._scatter_bees()
 
     def _find_bees(self, nocreate=False):
-        if self.mem:
-            log.info("remembering bees at %s", self.mem.asDict)
-            self.connection = self._get_connection(self.mem.region)
+        if self.cnf.activeSwarmId:
+            log.info("remembering bees at %s:%s",
+                     self.cnf.REGION, self.cnf.activeSwarmId)
+            self.connection = self._get_connection(self.cnf.REGION)
             self.swarm = self._assemble_old_bee_friends()
         else:
             log.info("no bees on my mind ...")
@@ -72,9 +92,8 @@ class Beekeeper(object):
             beeCount = len(beesIds)
             if len(beesIds) == len(instances):
                 self.connection.create_tags(beesIds, {"Name": "a bee!"})
-                self.mem.swarmId = self.swarm.id
-                self.mem.region = self.cnf.REGION
-                self.mem.remember()
+                self.cnf.activeSwarmId = self.swarm.id
+                self.cnf.save()
                 log.info('bees ready to attack: %s', beeCount)
                 print
                 break
@@ -97,7 +116,7 @@ class Beekeeper(object):
     def _assemble_old_bee_friends(self):
         swarms = self.connection.get_all_reservations()
         for swarm in swarms:
-            if swarm.id == self.mem.swarmId:
+            if swarm.id == self.cnf.activeSwarmId:
                 return swarm
 
     def _scatter_bees(self):
@@ -108,7 +127,8 @@ class Beekeeper(object):
         tIds = sorted([i.id for i in termInstances])
         if ids != tIds:
             log.warning("not all bees scattered: %s != %s", ids, tIds)
-        self.mem.forget()
+        self.cnf.activeSwarmId = None
+        self.cnf.save()
 
     def get_flying_bees_ids(self, instances):
         instanceIds = []
@@ -128,7 +148,7 @@ class Beekeeper(object):
         return boto.ec2.connect_to_region(region)
 
 
-class Config(beelib.JsonStorage):
+class Config(beelib.BeeBrain):
     NAME = 'bees_config.json'
     """Global configuration"""
     KEY_NAME_PREFIX = "aws-ec2"
@@ -140,17 +160,19 @@ class Config(beelib.JsonStorage):
         instanceId='ami-ff17fb96',
         securityGroups=['default'],
         placement=None,
-        subnetId='')
+        subnetId='',
+        activeSwarmId=None)
 
     def __init__(self):
         super(Config, self).__init__(self.NAME)
-        self.numberOfBees = self.DEFAULTS.get('numberOfBees')
-        self.zone = self.DEFAULTS.get('zone')
-        self.instanceType = self.DEFAULTS.get('instanceType')
-        self.instanceId = self.DEFAULTS.get('instanceId')
-        self.securityGroups = self.DEFAULTS.get('securityGroups')
-        self.placement = self.DEFAULTS.get('placement')  # fixme gov?
-        self.subnetId = self.DEFAULTS.get('subnetId')  # fixme useless atm
+        self.numberOfBees = self.DEFAULTS['numberOfBees']
+        self.zone = self.DEFAULTS['zone']
+        self.instanceType = self.DEFAULTS['instanceType']
+        self.instanceId = self.DEFAULTS['instanceId']
+        self.securityGroups = self.DEFAULTS['securityGroups']
+        self.placement = self.DEFAULTS['placement']  # fixme gov?
+        self.subnetId = self.DEFAULTS['subnetId']  # fixme useless atm
+        self.activeSwarmId = self.DEFAULTS['activeSwarmId']
         self.load()
 
     @property
@@ -176,54 +198,61 @@ class Config(beelib.JsonStorage):
         return "%s-%s" % (self.KEY_NAME_PREFIX, self.REGION)
 
 
-class SwarmMemory(beelib.JsonStorage):
-    NAME = 'bees_swarm_memory.json'
-    """persist an existing swarm"""
-
-    def __init__(self):
-        super(SwarmMemory, self).__init__(self.NAME)
-        self.swarmId = None
-        self.load()
-
-    def remember(self):
-        self.save()
-
-    def forget(self):
-        self.remove()
-
-
-class BattlePlan(beelib.JsonStorage):
+class BattlePlan(beelib.BeeBrain, beelib.BeeWhisperer):
     NAME = 'bees_battle_plan.json'
     DEFAULTS = dict(
-        url='http://update-bridge-oliver-y5rxgpaear.elasticbeanstalk.com/',
+        command='ab',
         numberOfRequests=100,
         concurrency=10,
+        url='http://update-bridge-oliver-y5rxgpaear.elasticbeanstalk.com/',
         postfilePath='bees_post_data.json',
-        mimeType='application/json;charset=UTF-8')
+        mimeType='application/json;charset=UTF-8',
+        additionalOptions=['-r'])
 
-    def __init__(self):
-        super(BattlePlan, self).__init__(self.NAME)
-        self.url = self.DEFAULTS.get('url')
-        self.numberOfRequests = self.DEFAULTS.get('numberOfRequests')
-        self.concurrency = self.DEFAULTS.get('concurrency')
-        self.postfilePath = self.DEFAULTS.get('postfilePath')
-        self.mimeType = self.DEFAULTS.get('mimeType')
+    def __init__(self, fqdn, keyFilePath):
+        beelib.BeeBrain.__init__(self, self.NAME)
+        beelib.BeeWhisperer.__init__(self, fqdn, keyFilePath)
+        self.url = self.DEFAULTS['url']
+        self.command = self.DEFAULTS['command']
+        self.numberOfRequests = self.DEFAULTS['numberOfRequests']
+        self.concurrency = self.DEFAULTS['concurrency']
+        self.postfilePath = self.DEFAULTS['postfilePath']
+        self.mimeType = self.DEFAULTS['mimeType']
+        self.additionalOptions = self.DEFAULTS['additionalOptions']
         self.load()
         self.post_process()
+        self.battleCry = BattleCry(self.command)
 
     def post_process(self):
         if not os.path.isabs(self.postfilePath):
             self.postfilePath = self._workPath / self.postfilePath
 
+    def contrive_battle_plan(self):
+        self._create_exchange_file()
+        if self.postfilePath:
+            self._prepare_post()
+        self.battleCry.clarify(self.url)
+
+    def _create_exchange_file(self):
+        tmpFilePath = self.remote['mktemp']().strip()
+        self.battleCry.clarify(['-e', tmpFilePath])
+
+    def _prepare_post(self):
+        plumbum_utils.copy(self.postfilePath, self.remote.cwd)
+        self.battleCry.clarify(['-T', self.mimeType, '-p',
+                                self.postfilePath.basename])
+
 
 class BattleCry(object):
-    def __init__(self, command='ab'):
+    def __init__(self, command):
         super(BattleCry, self).__init__()
         self.command = command
         self._elems = []
 
-    def specify(self, fragment):
-        self._elems.extend(fragment.split(' '))
+    def clarify(self, fragment):
+        if isinstance(fragment, str):
+            fragment = fragment.split(' ')
+        self._elems.extend(fragment)
 
     @property
     def specifics(self):
@@ -231,74 +260,6 @@ class BattleCry(object):
 
     def __str__(self):
         return '%s %s' % (self.command, ' '.join(self._elems))
-
-
-class BeeWhisperer(object):
-    DEFAULT_USER = 'newsapps'
-
-    # todo swarm? instance?
-    def __init__(self, fqdn, keyFilePath, username=None, battlePlan=None):
-        self.fqdn = fqdn
-        self.username = username or self.DEFAULT_USER
-        self.keyFilePath = keyFilePath
-        self.battlePlan = battlePlan or BattlePlan()
-        self._whisperer = None
-        self.battleCry = BattleCry()
-        self._sshKwargs = dict(
-            host=self.fqdn, user=self.username, keyfile=self.keyFilePath,
-            ssh_opts=['-oStrictHostKeyChecking=no'])
-
-    def __del__(self):
-        try:
-            self.remote.close()
-        except:
-            log.warning('tidy up failed', exc_info=True)
-
-    def contrive_battle_plan(self):
-        self._create_exchange_file()
-        if self.battlePlan.postfilePath:
-            self._prepare_post()
-        self.battleCry.specify(self.battlePlan.url)
-
-    def _create_exchange_file(self):
-        tmpFilePath = self.remote['mktemp']().strip()
-        self.battleCry.specify('-e %s' % (tmpFilePath))
-
-    def _prepare_post(self):
-        plumbum_utils.copy(self.battlePlan.postfilePath, self.remote.cwd)
-        self.battleCry.specify(
-            '-T "%s" -p %s' %
-            (self.battlePlan.mimeType,
-             self.battlePlan.postfilePath.basename))
-
-    def whisper(self):
-        """
-        params.append({
-        'i': i,
-        'instance_id': instance.id,
-        'instance_name': instance.public_dns_name,
-        'url': url,
-        'concurrent_requests': connections_per_instance,
-        'num_requests': requests_per_instance,
-        'username': username,
-        'key_name': key_name,
-        'headers': headers,
-        'cookies': cookies,
-        'post_file': options.get('post_file'),
-        'keep_alive': options.get('keep_alive'),
-        'mime_type': options.get('mime_type', ''),
-        'tpr': options.get('tpr'),
-        'rps': options.get('rps'),
-        'basic_auth': options.get('basic_auth')
-        })
-        """
-        with SshMachine(**self._sshKwargs) as rem:
-            print rem[self.battleCry.command](self.battleCry.specifics)
-        # todo just fetch raw data for starters
-
-    @beelib.cached_property
-    def remote(self):
-        return SshMachine(**self._sshKwargs)
 
 
 def main():

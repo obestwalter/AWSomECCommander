@@ -6,26 +6,47 @@ import os
 from types import FunctionType, MethodType
 import sys
 
-from plumbum import LocalPath
+from plumbum import LocalPath, SshMachine
 from plumbum.path import LocalWorkdir
 
 
 log = logging.getLogger('bees.lib')
 
 
-__all__ = [
-    'JsonStorage',
-    'oa',
-    'oac',
-    'obj_attr',
-    'cached_property',
-    'expire_cached_properties',
-    'caller',
-]
+def cached_property(meth):
+    """Cache this property until the cache is expired explicitly"""
+    @property
+    @functools.wraps(meth)
+    def _cached_property(self):
+        try:
+            return self._propertyCache[meth]
+
+        except AttributeError:
+            self._propertyCache = {}
+            result = self._propertyCache[meth] = meth(self)
+            return result
+
+        except KeyError:
+            result = self._propertyCache[meth] = meth(self)
+            return result
+
+    return _cached_property
 
 
-class JsonStorage(object):
-    """simple json persistence - always working in cwd"""
+def expire_cached_properties(meth):
+    """a method decorated with this expires all cached properties on call"""
+    @functools.wraps(meth)
+    def _expire_cached_properties(self, *args, **kwargs):
+        cache = getattr(self, "_propertyCache", None)
+        if type(cache) == dict:
+            cache.clear()
+        return meth(self, *args, **kwargs)
+
+    return _expire_cached_properties
+
+
+class BeeBrain(object):
+    """simple persistence with json - always working in cwd"""
     def __init__(self, configName):
         self._workPath = LocalWorkdir()
         self._configPath = self._workPath / configName
@@ -73,6 +94,29 @@ class JsonStorage(object):
             return [self._nrmlz(v) for v in value]
 
         return value
+
+
+class BeeWhisperer(object):
+    """Talk to your bees via ssh"""
+    DEFAULT_USER = 'newsapps'
+
+    def __init__(self, fqdn, keyFilePath, username=None):
+        self.fqdn = fqdn
+        self.username = username or self.DEFAULT_USER
+        self.keyFilePath = keyFilePath
+        self._sshKwargs = dict(
+            host=self.fqdn, user=self.username, keyfile=self.keyFilePath,
+            ssh_opts=['-oStrictHostKeyChecking=no'])
+
+    def __del__(self):
+        try:
+            self.remote.close()
+        except:
+            pass
+
+    @cached_property
+    def remote(self):
+        return SshMachine(**self._sshKwargs)
 
 
 SPECIAL_ATTR_NAMES = [
@@ -201,40 +245,6 @@ def oa(obj):
 
 def oac(obj):
     return obj_attr(obj, filterMethods=False, filterPrivate=False)
-
-
-def cached_property(meth):
-    """Cache this property until the cache is expired explicitly"""
-    @property
-    @functools.wraps(meth)
-    def _cached_property(self):
-        try:
-            return self._propertyCache[meth]
-
-        except AttributeError:
-            self._propertyCache = {}
-            result = self._propertyCache[meth] = meth(self)
-            return result
-
-        except KeyError:
-            result = self._propertyCache[meth] = meth(self)
-            return result
-
-    return _cached_property
-
-
-def expire_cached_properties(meth):
-    """if this method is called all cached properties are expired"""
-    @functools.wraps(meth)
-    def _expire_cached_properties(self, *args, **kwargs):
-        cache = getattr(self, "_propertyCache", None)
-        if type(cache) == dict:
-            #print(cache)
-            cache.clear()
-            #print("expired %s.propertyCache" % (self.__class__.__name__))
-        return meth(self, *args, **kwargs)
-
-    return _expire_cached_properties
 
 
 class BeeSting(Exception):
