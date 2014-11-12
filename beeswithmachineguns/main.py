@@ -214,8 +214,14 @@ def main():
 if __name__ == '__main__':
     import sys
 
+    # sys.argv = ['bees', 'up', '-s', '1', '-z',
+    #             'us-east-1a', '-k', 'aws-ec2-us-east-1']
+
     sys.argv = [
-        'bees', 'up', '-s', '1', '-z', 'us-east-1a', '-k', 'aws-ec2-us-east-1']
-    sys.argv = ['bees', 'down']
+        'bees', 'attack', '-n', '100', '-c', '20', '-k', 'aws-ec2-us-east-1',
+        '-p', '../tests/fake_project_dir/post_data',
+        '-u', 'http://update-bridge-oliver-y5rxgpaear.elasticbeanstalk.com/']
+
+    # sys.argv = ['bees', 'down']
 
     main()

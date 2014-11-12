@@ -7,3 +7,4 @@ MANIFEST
 dist
 env
 /tests/fake_project_dir/*
+__scratchpad.py

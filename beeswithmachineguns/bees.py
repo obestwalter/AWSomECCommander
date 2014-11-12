@@ -24,7 +24,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-from multiprocessing import Pool
 import os
 import re
 import socket
@@ -542,8 +541,11 @@ def attack(url, n, c, **options):
 
     print 'Organizing the swarm.'
     # Spin up processes for connecting to EC2 instances
-    pool = Pool(len(params))
-    results = pool.map(_attack, params)
+    theseParams = params[0]
+    # pool = Pool(len(params))
+    # results = pool.map(_attack, params)
+
+    results = _attack(theseParams)
 
     summarized_results = _summarize_results(results, params, csv_filename)
     print 'Offensive complete.'

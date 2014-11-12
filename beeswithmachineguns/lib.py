@@ -4,17 +4,17 @@ import json
 import logging
 import os
 from types import FunctionType, MethodType
+import sys
 
 from plumbum import LocalPath
 from plumbum.path import LocalWorkdir
 
 
-log = logging.getLogger(__name__)
-log.setLevel(logging.ERROR)
+log = logging.getLogger('bees.lib')
 
 
 __all__ = [
-    'JsonConfigger',
+    'JsonStorage',
     'oa',
     'oac',
     'obj_attr',
@@ -24,29 +24,31 @@ __all__ = [
 ]
 
 
-class JsonConfigger(object):
-    def __init__(self, configPath):
-        self._path = LocalPath(configPath)
+class JsonStorage(object):
+    """simple json persistence - always working in cwd"""
+    def __init__(self, configName):
+        self._workPath = LocalWorkdir()
+        self._configPath = self._workPath / configName
 
-    def load_config(self):
-        if not self._path.exists():
-            log.info("nothing to load at %s", self._path)
-            return self
+    def __nonzero__(self):
+        return self._configPath.exists()
 
-        config = json.loads(self._path.read())
-        for attrName, value in config.items():
-            setattr(self, attrName, value)
-        return self
+    def load(self):
+        if self._configPath.exists():
+            try:
+                config = json.loads(self._configPath.read())
+                for attrName, value in config.items():
+                    setattr(self, attrName, value)
+            except Exception as e:
+                log.error('reading %s failed (deleting invalid file) [%s]',
+                          self._configPath, e.message)
+                self.remove()
 
-    def save_config(self):
-        self._path.write(json.dumps(self.asDict, indent=True))
+    def save(self):
+        self._configPath.write(json.dumps(self.asDict, indent=True))
 
-    def remove_config(self):
-        self._path.delete()
-
-    @property
-    def HAS_SAVED_STATE(self):
-        return self._path.exists()
+    def remove(self):
+        self._configPath.delete()
 
     @property
     def asDict(self):
@@ -252,22 +254,26 @@ class BeeSting(Exception):
 
 
 class LoggingConfig(object):
-    NAME = 'bees'
+    FMT = ('%(asctime)s %(name)s %(funcName)s:%(lineno)d '
+           '%(levelname)s : %(message)s')
+    MAIN_LEVEL = logging.DEBUG
+    LIB_LEVEL = logging.WARNING
 
     def __init__(self):
         self.workPath = LocalWorkdir()
-        self.localLogPath = None
         """:type: LocalPath"""
+        self.localLogPath = self.workPath / 'bees.log'
 
-    def init_logging(self, logLevel=logging.INFO, logToFile=True):
-        log.setLevel(logLevel)
-        self.localLogPath = self.workPath / (self.NAME + '.log')
-        fmt = ('%(asctime)s %(name)s %(funcName)s:%(lineno)d '
-               '%(levelname)s : %(message)s')
-        logging.basicConfig(format=fmt)
+    def init_logging(self, logToFile=True):
+        logger = logging.getLogger('bees')
+        logger.setLevel(self.MAIN_LEVEL)
+        ch = logging.StreamHandler(stream=sys.stdout)
+        ch.setFormatter(logging.Formatter(self.FMT))
+        logger.addHandler(ch)
         if logToFile:
             fh = logging.FileHandler(filename=str(self.localLogPath))
-            fh.setFormatter(logging.Formatter(fmt))
-            log.addHandler(fh)
-        log.name = self.NAME if log.name == '__main__' else log.name
-        log.debug("working in %s", self.workPath)
+            fh.setFormatter(logging.Formatter(self.FMT))
+            logger.addHandler(fh)
+        libLogger = logging.getLogger('bees.lib')
+        libLogger.setLevel(self.LIB_LEVEL)
+        logger.info("working in %s", self.workPath)
