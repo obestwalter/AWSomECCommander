@@ -20,9 +20,9 @@ import os
 import boto
 import boto.ec2
 from boto.ec2.ec2object import EC2Object
-import paramiko
 from plumbum import SshMachine
 from plumbum.path import LocalPath, LocalWorkdir
+import plumbum.path.utils as plumbum_utils
 
 import lib as beelib
 
@@ -193,25 +193,42 @@ class SwarmMemory(beelib.JsonStorage):
 
 class BattlePlan(beelib.JsonStorage):
     NAME = 'bees_battle_plan.json'
-    DEFAULT_POST_FILENAME = 'bees_post_data.json'
-    DEFAULT_POST_MIMETYPE = 'application/json'
+    DEFAULTS = dict(
+        url='update-bridge-oliver-y5rxgpaear.elasticbeanstalk.com',
+        numberOfRequests=100,
+        concurrency=10,
+        postfilePath='bees_post_data.json',
+        mimeType='application/json; charset=UTF-8')
 
     def __init__(self):
         super(BattlePlan, self).__init__(self.NAME)
-        self.postfilePath = self.DEFAULT_POST_FILENAME
-        self.postMimeType = self.DEFAULT_POST_FILENAME
+        self.url = self.DEFAULTS.get('url')
+        self.numberOfRequests = self.DEFAULTS.get('numberOfRequests')
+        self.concurrency = self.DEFAULTS.get('concurrency')
+        self.postfilePath = self.DEFAULTS.get('postfilePath')
+        self.mimeType = self.DEFAULTS.get('mimeType')
         self.load()
+        self.post_process()
+
+    def post_process(self):
+        if not os.path.isabs(self.postfilePath):
+            self.postfilePath = self._workPath / self.postfilePath
 
 
 class BattleCry(object):
-    def __init__(self, seed=None):
-        self.battleCry = seed or ['ab']
+    def __init__(self, cmd='ab'):
+        super(BattleCry, self).__init__()
+        self._cmd = cmd
+        self._elems = []
 
     def enhance(self, fragment):
-        self.battleCry.append(fragment.split(' '))
+        self._elems.extend(fragment.split(' '))
+
+    def enunciate(self):
+        return [self._cmd] + self._elems
 
     def __str__(self):
-        return ' '.join(self.battleCry)
+        return '%s %s' % (self._cmd, ' '.join(self._elems))
 
 
 class BeeWisperer(object):
@@ -221,13 +238,36 @@ class BeeWisperer(object):
     def __init__(self, fqdn, keyFilePath, username=None, battlePlan=None):
         self.fqdn = fqdn
         self.username = username or self.DEFAULT_USER
-        self.keyFilePath = str(keyFilePath)
+        self.keyFilePath = keyFilePath
         self.battlePlan = battlePlan or BattlePlan()
         self._whisperer = None
-        self.battleCry = ['ab']
+        self.battleCry = BattleCry()
         self._sshKwargs = dict(
             host=self.fqdn, user=self.username, keyfile=self.keyFilePath,
             ssh_opts=['-oStrictHostKeyChecking=no'])
+
+    def __del__(self):
+        try:
+            self.remote.close()
+        except:
+            log.warning('tidy up failed', exc_info=True)
+
+    def contrive_battle_plan(self):
+        self._create_exchange_file()
+        if self.battlePlan.postfilePath:
+            self._prepare_post()
+        self.battleCry.enhance('http://avira.com/')
+
+    def _create_exchange_file(self):
+        tmpFilePath = self.remote['mktemp']().strip()
+        self.battleCry.enhance('-e %s' % (tmpFilePath))
+
+    def _prepare_post(self):
+        plumbum_utils.copy(self.battlePlan.postfilePath, self.remote.cwd)
+        self.battleCry.enhance(
+            '-T "%s" -p %s' %
+            (self.battlePlan.mimeType,
+             self.battlePlan.postfilePath.basename))
 
     def attack(self):
         """
@@ -251,43 +291,14 @@ class BeeWisperer(object):
         })
         """
         with SshMachine(**self._sshKwargs) as rem:
-            print rem['ab']('-n 1000 -c 200 -u http://google.de/'.split(' '))
-
+            plumbum_utils.copy(self.battlePlan.postfilePath, rem.cwd)
+            # print rem['ab']('-n 1000 -c 200 -u http://google.de/'.split(' '))
+            print rem['ls']('-la')
         # todo just fetch raw data for starters
 
-    def initialize_whisperer(self):
-        log.info('enter hive: %(username)s@%(fqdn)s, %(keyFilePath)s',
-                 self.__dict__)
-        whisperer = paramiko.SSHClient()
-        whisperer.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        whisperer.connect(self.fqdn, username=self.username,
-                          key_filename=self.keyFilePath)
-        self._whisperer = whisperer
-
-    def prepare_hive(self):
-        if self.battlePlan.postfilePath:
-            os.system(
-                "scp -q -o 'StrictHostKeyChecking=no' "
-                "-i %s %s %s@%s:/tmp/honeycomb" %
-                (self.keyFilePath, self.battlePlan.postfilePath,
-                 self.username, self.fqdn))
-            options += ' -T "%(mime_type)s; charset=UTF-8" -p /tmp/honeycomb' % params
-
-
-    def _create_exchange_file(self):
-        filePath = self.whisper('mktemp')
-        self.battleCry.enhance
-        """ end up as -e fileName
-
-        options += ' -e %(csv_filename)s' % params
-
-        """
-
-    def whisper(self, cmd):
-        stdin, stdout, stderr = self._whisperer.exec_command(cmd)
-        stdout = stdout.read().strip()
-        # todo handle errors better
-        return stdout
+    @beelib.cached_property
+    def remote(self):
+        return SshMachine(**self._sshKwargs)
 
 
 def main():
