@@ -4,13 +4,13 @@
 
 * class based approach
   (two reasons:
-    * ease testing
-    * functionality easily adjustable by by overwriting methods
+    * ease of testing
+    * functionality easily adjustable by overwriting methods
 
 * thrown out subnet stuff, as I don't understand the currrent implementation
   (seems somewhat nonsensical to me ...)
 
-* thrown out (very specific) gov stuff (can easily overriden)
+* thrown out (very specific) gov stuff (can be easily overriden)
 
 * output is logged instead of printed
 """
@@ -133,23 +133,24 @@ class Config(beelib.JsonStorage):
     """Global configuration"""
     KEY_NAME_PREFIX = "aws-ec2"
     KEY_EXT = '.pem'
-    DEFAULT_NUMBER_OF_BEES = 10
-    DEFAULT_ZONE = 'us-east-1d'
-    DEFAULT_INSTANCE_ID = 'ami-ff17fb96'
-    DEFAULT_SECURITY_GROUPS = ['default']
-    DEFAULT_INSTANCE_TYPE = 't1.micro'
-    DEFAULT_PLACEMENT = None
-    DEFAULT_SUBNET_ID = ''
+    DEFAULTS = dict(
+        numberOfBees=10,
+        zone='us-east-1d',
+        instanceType='t1.micro',
+        instanceId='ami-ff17fb96',
+        securityGroups=['default'],
+        placement=None,
+        subnetId='')
 
     def __init__(self):
         super(Config, self).__init__(self.NAME)
-        self.numberOfBees = self.DEFAULT_NUMBER_OF_BEES
-        self.zone = self.DEFAULT_ZONE
-        self.securityGroups = self.DEFAULT_SECURITY_GROUPS
-        self.instanceId = self.DEFAULT_INSTANCE_ID
-        self.instanceType = self.DEFAULT_INSTANCE_TYPE
-        self.placement = self.DEFAULT_PLACEMENT  # fixme for gov stuff?
-        self.subnetId = self.DEFAULT_SUBNET_ID  # fixme useless atm
+        self.numberOfBees = self.DEFAULTS.get('numberOfBees')
+        self.zone = self.DEFAULTS.get('zone')
+        self.instanceType = self.DEFAULTS.get('instanceType')
+        self.instanceId = self.DEFAULTS.get('instanceId')
+        self.securityGroups = self.DEFAULTS.get('securityGroups')
+        self.placement = self.DEFAULTS.get('placement')  # fixme gov?
+        self.subnetId = self.DEFAULTS.get('subnetId')  # fixme useless atm
         self.load()
 
     @property
@@ -177,7 +178,7 @@ class Config(beelib.JsonStorage):
 
 class SwarmMemory(beelib.JsonStorage):
     NAME = 'bees_swarm_memory.json'
-    """reservation id of bee active swarm"""
+    """persist an existing swarm"""
 
     def __init__(self):
         super(SwarmMemory, self).__init__(self.NAME)
