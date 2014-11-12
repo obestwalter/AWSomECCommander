@@ -15,9 +15,9 @@
 * output is logged instead of printed
 """
 import logging
+from multiprocessing import Pool
 import os
 
-import boto
 import boto.ec2
 from plumbum.path import LocalPath, LocalWorkdir
 import plumbum.path.utils as plumbum_utils
@@ -28,10 +28,28 @@ import lib as beelib
 log = logging.getLogger('bees')
 
 
+class BattlePack(object):
+    """All the bee needs to take over the process border"""
+    def __init__(self, beeId, fqdn, keyPath, username, n, c, battleCry):
+        self.beeId = beeId
+        self.fqdn = fqdn
+        self.username = username
+        # stringify path because multiprocessing borks on LocalPath objects
+        self.keyPath = str(keyPath)
+        self.n = n
+        self.c = c
+        self.battleCry = battleCry
+
+
+def _attack_in_process(battlePack):
+    return battlePack
+    # print bw.remote[battleCry.command](battleCry.specifics)
+
+
 class Beekeeper(object):
     def __init__(self, cnf=None, connection=None):
         self.cnf = cnf or Config()
-        self.connection = connection
+        self._connection = connection
         self.swarm = None
         self.healthcheck()
 
@@ -39,29 +57,29 @@ class Beekeeper(object):
         self._find_bees()
 
     def attack(self):
-        pass
         """
-        params.append({
-        'i': i,
-        'instance_id': instance.id,
-        'instance_name': instance.public_dns_name,
-        'url': url,
         'concurrent_requests': connections_per_instance,
         'num_requests': requests_per_instance,
-        'username': username,
-        'key_name': key_name,
-        'headers': headers,
-        'cookies': cookies,
-        'post_file': options.get('post_file'),
-        'keep_alive': options.get('keep_alive'),
-        'mime_type': options.get('mime_type', ''),
-        'tpr': options.get('tpr'),
-        'rps': options.get('rps'),
-        'basic_auth': options.get('basic_auth')
-        })
         """
-        # print self.remote[self.battleCry.command](self.battleCry.specifics)
-        # todo just fetch raw data for starters
+        instances = self.swarm.instances
+        pool = Pool(len(instances))
+        battlePacks = []
+        for instance in instances:
+            fqdn = instance.public_dns_name
+            keyPath = self.cnf.KEY_PATH
+            username = self.cnf.username
+            battlePlan = BattlePlan(fqdn, keyPath, username)
+            n = battlePlan.numberOfRequests
+            c = battlePlan.concurrency
+
+            battleCry = battlePlan.contrive()
+            pack = BattlePack(beeId=instance.id, fqdn=fqdn, keyPath=keyPath,
+                              username=username, n=n, c=c, battleCry=battleCry)
+            battlePacks.append(pack)
+
+        results = pool.map(_attack_in_process, battlePacks)
+        for result in results:
+            print beelib.oa(result)
 
     def down(self):
         self._find_bees(nocreate=True)
@@ -71,7 +89,7 @@ class Beekeeper(object):
         if self.cnf.activeSwarmId:
             log.info("remembering bees at %s:%s",
                      self.cnf.REGION, self.cnf.activeSwarmId)
-            self.connection = self._get_connection(self.cnf.REGION)
+            self._connection = self._get_connection(self.cnf.REGION)
             self.swarm = self._assemble_old_bee_friends()
         else:
             log.info("no bees on my mind ...")
@@ -79,7 +97,7 @@ class Beekeeper(object):
                 return
 
             log.info("creating a swarm ...")
-            self.connection = self._get_connection(self.cnf.REGION)
+            self._connection = self._get_connection(self.cnf.REGION)
             self.swarm = self._invite_new_bee_friends()
             self._weaponize_bees()
         log.debug("using swarm %s", beelib.oa(self.swarm))
@@ -91,7 +109,7 @@ class Beekeeper(object):
             beesIds = self.get_flying_bees_ids(instances)
             beeCount = len(beesIds)
             if len(beesIds) == len(instances):
-                self.connection.create_tags(beesIds, {"Name": "a bee!"})
+                self._connection.create_tags(beesIds, {"Name": "a bee!"})
                 self.cnf.activeSwarmId = self.swarm.id
                 self.cnf.save()
                 log.info('bees ready to attack: %s', beeCount)
@@ -102,7 +120,7 @@ class Beekeeper(object):
 
     def _invite_new_bee_friends(self):
         log.info("arming the bees ...")
-        swarm = self.connection.run_instances(
+        swarm = self._connection.run_instances(
             image_id=self.cnf.instanceId,
             min_count=self.cnf.numberOfBees,
             max_count=self.cnf.numberOfBees,
@@ -114,7 +132,7 @@ class Beekeeper(object):
         return swarm
 
     def _assemble_old_bee_friends(self):
-        swarms = self.connection.get_all_reservations()
+        swarms = self._connection.get_all_reservations()
         for swarm in swarms:
             if swarm.id == self.cnf.activeSwarmId:
                 return swarm
@@ -123,7 +141,7 @@ class Beekeeper(object):
         """call off the swarm"""
         ids = sorted([i.id for i in self.swarm.instances])
         log.info('scatter swarm %s', ids)
-        termInstances = self.connection.terminate_instances(instance_ids=ids)
+        termInstances = self._connection.terminate_instances(instance_ids=ids)
         tIds = sorted([i.id for i in termInstances])
         if ids != tIds:
             log.warning("not all bees scattered: %s != %s", ids, tIds)
@@ -152,15 +170,17 @@ class Config(beelib.BeeBrain):
     NAME = 'bees_config.json'
     """Global configuration"""
     KEY_NAME_PREFIX = "aws-ec2"
-    KEY_EXT = '.pem'
+    DEFAULT_KEY_EXT = '.pem'
     DEFAULTS = dict(
-        numberOfBees=10,
+        numberOfBees=3,
         zone='us-east-1d',
         instanceType='t1.micro',
         instanceId='ami-ff17fb96',
         securityGroups=['default'],
         placement=None,
         subnetId='',
+        keyPath=None,
+        username='newsapps',
         activeSwarmId=None)
 
     def __init__(self):
@@ -172,10 +192,13 @@ class Config(beelib.BeeBrain):
         self.securityGroups = self.DEFAULTS['securityGroups']
         self.placement = self.DEFAULTS['placement']  # fixme gov?
         self.subnetId = self.DEFAULTS['subnetId']  # fixme useless atm
+        self._keyPath = self.DEFAULTS['keyPath']
+        self._keyExt = self.DEFAULT_KEY_EXT
+        self.username = self.DEFAULTS['username']
         self.activeSwarmId = self.DEFAULTS['activeSwarmId']
         self.load()
 
-    @property
+    @beelib.cached_property
     def REGION(self):
         """ region = zone without last letter """
         return self.zone[:-1]
@@ -186,15 +209,21 @@ class Config(beelib.BeeBrain):
             if candidate.exists():
                 return candidate
 
-        log.warning("no key found in %s", self.KEY_SEARCH_PATHS)
+        # todo implement usage of ssh agent
+        raise beelib.BeeSting("no key found in %s", self.KEY_SEARCH_PATHS)
 
     @beelib.cached_property
     def KEY_SEARCH_PATHS(self):
         searchPaths = [self._workPath, LocalPath(os.getenv('HOME')) / '.ssh']
-        return [path / (self.KEY_NAME + self.KEY_EXT) for path in searchPaths]
+        return [path / (self.KEY_NAME + self._keyExt) for path in searchPaths]
 
-    @property
+    @beelib.cached_property
     def KEY_NAME(self):
+        if self._keyPath:
+            name, ext = os.path.splitext(os.path.basename(self._keyPath))
+            self._keyExt = ext
+            return name
+
         return "%s-%s" % (self.KEY_NAME_PREFIX, self.REGION)
 
 
@@ -209,9 +238,9 @@ class BattlePlan(beelib.BeeBrain, beelib.BeeWhisperer):
         mimeType='application/json;charset=UTF-8',
         additionalOptions=['-r'])
 
-    def __init__(self, fqdn, keyFilePath):
+    def __init__(self, fqdn, keyFilePath, username):
         beelib.BeeBrain.__init__(self, self.NAME)
-        beelib.BeeWhisperer.__init__(self, fqdn, keyFilePath)
+        beelib.BeeWhisperer.__init__(self, fqdn, keyFilePath, username)
         self.url = self.DEFAULTS['url']
         self.command = self.DEFAULTS['command']
         self.numberOfRequests = self.DEFAULTS['numberOfRequests']
@@ -221,25 +250,27 @@ class BattlePlan(beelib.BeeBrain, beelib.BeeWhisperer):
         self.additionalOptions = self.DEFAULTS['additionalOptions']
         self.load()
         self.post_process()
-        self.battleCry = BattleCry(self.command)
+        self._battleCry = BattleCry(self.command)
 
     def post_process(self):
         if not os.path.isabs(self.postfilePath):
             self.postfilePath = self._workPath / self.postfilePath
 
-    def contrive_battle_plan(self):
+    def contrive(self):
         self._create_exchange_file()
         if self.postfilePath:
             self._prepare_post()
-        self.battleCry.clarify(self.url)
+        self._battleCry.clarify(self.additionalOptions)
+        self._battleCry.clarify(self.url)
+        return self._battleCry
 
     def _create_exchange_file(self):
         tmpFilePath = self.remote['mktemp']().strip()
-        self.battleCry.clarify(['-e', tmpFilePath])
+        self._battleCry.clarify(['-e', tmpFilePath])
 
     def _prepare_post(self):
         plumbum_utils.copy(self.postfilePath, self.remote.cwd)
-        self.battleCry.clarify(['-T', self.mimeType, '-p',
+        self._battleCry.clarify(['-T', self.mimeType, '-p',
                                 self.postfilePath.basename])
 
 

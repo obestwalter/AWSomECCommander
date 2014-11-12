@@ -97,13 +97,11 @@ class BeeBrain(object):
 
 
 class BeeWhisperer(object):
-    """Talk to your bees via ssh"""
-    DEFAULT_USER = 'newsapps'
-
-    def __init__(self, fqdn, keyFilePath, username=None):
+    """Whisper commands to your bees"""
+    def __init__(self, fqdn, keyFilePath, username):
         self.fqdn = fqdn
-        self.username = username or self.DEFAULT_USER
         self.keyFilePath = keyFilePath
+        self.username = username
         self._sshKwargs = dict(
             host=self.fqdn, user=self.username, keyfile=self.keyFilePath,
             ssh_opts=['-oStrictHostKeyChecking=no'])
@@ -116,6 +114,7 @@ class BeeWhisperer(object):
 
     @cached_property
     def remote(self):
+        log.debug(str(self._sshKwargs))
         return SshMachine(**self._sshKwargs)
 
 
@@ -248,7 +247,7 @@ def oac(obj):
 
 
 class BeeSting(Exception):
-    """For exceptions raised by this module
+    """For exceptions raised by beeswithknees
 
     Provides log style message passing like::
 
@@ -260,14 +259,14 @@ class BeeSting(Exception):
                 msg = msg % (args)
             except:
                 msg = "[PLEASE FIX MESSAGE]: %s %s" % (msg, str(args))
-        Exception.__init__(self, msg)
+        super(BeeSting, self).__init__(msg)
 
 
 class LoggingConfig(object):
     FMT = ('%(asctime)s %(name)s %(funcName)s:%(lineno)d '
            '%(levelname)s : %(message)s')
     MAIN_LEVEL = logging.DEBUG
-    LIB_LEVEL = logging.WARNING
+    LIB_LEVEL = logging.DEBUG
 
     def __init__(self):
         self.workPath = LocalWorkdir()
