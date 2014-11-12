@@ -270,8 +270,3 @@ if __name__ == '__main__':
     workPath.chdir('../tests/fake_project_dir')
     beelib.LoggingConfig().init_logging()
     main()
-
-    # time.sleep(0.01)
-    # for k, v in cnf.__dict__.items():
-    #     print k, v
-    # print cnf.beesIds
