@@ -17,6 +17,7 @@
 import logging
 from multiprocessing import Pool
 import os
+import traceback
 
 import boto.ec2
 from plumbum.path import LocalPath, LocalWorkdir
@@ -30,20 +31,23 @@ log = logging.getLogger('bees')
 
 class BattlePack(object):
     """All the bee needs to take over the process border"""
-    def __init__(self, beeId, fqdn, keyPath, username, n, c, battleCry):
+    def __init__(self, beeId, fqdn, keyPath, username, battleCry):
         self.beeId = beeId
         self.fqdn = fqdn
-        self.username = username
-        # stringify path because multiprocessing borks on LocalPath objects
+        # stringify keyPath: multiprocessing borks on LocalPath objects
         self.keyPath = str(keyPath)
-        self.n = n
-        self.c = c
+        self.username = username
         self.battleCry = battleCry
 
 
-def _attack_in_process(battlePack):
-    return battlePack
-    # print bw.remote[battleCry.command](battleCry.specifics)
+def _attack_in_process(pack):
+    try:
+        bw = beelib.BeeWhisperer(pack.fqdn, pack.keyPath, pack.username)
+        battleCry = pack.battleCry
+        return bw.remote[battleCry.command](battleCry.specifics)
+
+    except:
+        return traceback.format_exc()
 
 
 class Beekeeper(object):
@@ -69,14 +73,10 @@ class Beekeeper(object):
             keyPath = self.cnf.KEY_PATH
             username = self.cnf.username
             battlePlan = BattlePlan(fqdn, keyPath, username)
-            n = battlePlan.numberOfRequests
-            c = battlePlan.concurrency
-
             battleCry = battlePlan.contrive()
             pack = BattlePack(beeId=instance.id, fqdn=fqdn, keyPath=keyPath,
-                              username=username, n=n, c=c, battleCry=battleCry)
+                              username=username, battleCry=battleCry)
             battlePacks.append(pack)
-
         results = pool.map(_attack_in_process, battlePacks)
         for result in results:
             print beelib.oa(result)
@@ -257,10 +257,12 @@ class BattlePlan(beelib.BeeBrain, beelib.BeeWhisperer):
             self.postfilePath = self._workPath / self.postfilePath
 
     def contrive(self):
+        self._battleCry.clarify(['-n', str(self.numberOfRequests)])
+        self._battleCry.clarify(['-c', str(self.concurrency)])
         self._create_exchange_file()
+        self._battleCry.clarify(self.additionalOptions)
         if self.postfilePath:
             self._prepare_post()
-        self._battleCry.clarify(self.additionalOptions)
         self._battleCry.clarify(self.url)
         return self._battleCry
 

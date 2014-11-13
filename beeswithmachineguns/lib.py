@@ -98,12 +98,12 @@ class BeeBrain(object):
 
 class BeeWhisperer(object):
     """Whisper commands to your bees"""
-    def __init__(self, fqdn, keyFilePath, username):
+    def __init__(self, fqdn, keyPath, username):
         self.fqdn = fqdn
-        self.keyFilePath = keyFilePath
+        self.keyPath = keyPath
         self.username = username
         self._sshKwargs = dict(
-            host=self.fqdn, user=self.username, keyfile=self.keyFilePath,
+            host=self.fqdn, user=self.username, keyfile=self.keyPath,
             ssh_opts=['-oStrictHostKeyChecking=no'])
 
     def __del__(self):
@@ -272,17 +272,25 @@ class LoggingConfig(object):
         self.workPath = LocalWorkdir()
         """:type: LocalPath"""
         self.localLogPath = self.workPath / 'bees.log'
+        self.logger = logging.getLogger('bees')
+        self.logger.setLevel(self.MAIN_LEVEL)
 
-    def init_logging(self, logToFile=True):
-        logger = logging.getLogger('bees')
-        logger.setLevel(self.MAIN_LEVEL)
+    def init_logging(self):
+        self.add_console_handler()
+        self.add_file_handler(self.localLogPath)
+        self.set_lib_logger_level()
+        self.logger.info("working in %s", self.workPath)
+
+    def set_lib_logger_level(self, level=LIB_LEVEL):
+        libLogger = logging.getLogger('bees.lib')
+        libLogger.setLevel(level)
+
+    def add_console_handler(self):
         ch = logging.StreamHandler(stream=sys.stdout)
         ch.setFormatter(logging.Formatter(self.FMT))
-        logger.addHandler(ch)
-        if logToFile:
-            fh = logging.FileHandler(filename=str(self.localLogPath))
-            fh.setFormatter(logging.Formatter(self.FMT))
-            logger.addHandler(fh)
-        libLogger = logging.getLogger('bees.lib')
-        libLogger.setLevel(self.LIB_LEVEL)
-        logger.info("working in %s", self.workPath)
+        self.logger.addHandler(ch)
+
+    def add_file_handler(self, filePath):
+        fh = logging.FileHandler(filename=str(filePath))
+        fh.setFormatter(logging.Formatter(self.FMT))
+        self.logger.addHandler(fh)
