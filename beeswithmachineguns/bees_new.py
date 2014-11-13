@@ -29,28 +29,6 @@ import lib as beelib
 log = logging.getLogger('bees')
 
 
-class BattlePack(object):
-    """All the bee needs to take over the process border"""
-    def __init__(self, beeId, fqdn, keyPath, username, battleCry):
-        self.beeId = beeId
-        self.fqdn = fqdn
-        # stringify keyPath: multiprocessing borks on LocalPath objects
-        self.keyPath = str(keyPath)
-        self.username = username
-        self.battleCry = battleCry
-
-
-def async_worker(pack):
-    """do the work in an independent process"""
-    try:
-        bw = beelib.BeeWhisperer(pack.fqdn, pack.keyPath, pack.username)
-        battleCry = pack.battleCry
-        return bw.remote[battleCry.command](battleCry.specifics)
-
-    except:
-        return traceback.format_exc()
-
-
 class Beekeeper(object):
     def __init__(self, cnf=None, connection=None):
         self.cnf = cnf or Config()
@@ -62,23 +40,22 @@ class Beekeeper(object):
         self._find_bees()
 
     def attack(self):
-        """
-        'concurrent_requests': connections_per_instance,
-        'num_requests': requests_per_instance,
-        """
         instances = self.swarm.instances
-        pool = Pool(len(instances))
+        numInstances = len(instances)
+        pool = Pool(numInstances)
         battlePacks = []
+
         for instance in instances:
             fqdn = instance.public_dns_name
             keyPath = self.cnf.KEY_PATH
             username = self.cnf.username
-            battlePlan = BattlePlan(fqdn, keyPath, username)
+            battlePlan = BattlePlan(fqdn, keyPath, username,
+                                    armySize=numInstances)
             battleCry = battlePlan.contrive()
             pack = BattlePack(beeId=instance.id, fqdn=fqdn, keyPath=keyPath,
                               username=username, battleCry=battleCry)
             battlePacks.append(pack)
-        results = pool.map(async_worker, battlePacks)
+        results = pool.map(battlefield, battlePacks)
         for result in results:
             print beelib.oa(result)
 
@@ -167,13 +144,34 @@ class Beekeeper(object):
         return boto.ec2.connect_to_region(region)
 
 
+class BattlePack(object):
+    """All a bee needs for battle on the other side of the process border"""
+    def __init__(self, beeId, fqdn, keyPath, username, battleCry):
+        self.beeId = beeId
+        self.fqdn = fqdn
+        # stringify keyPath: multiprocessing borks on LocalPath objects
+        self.keyPath = str(keyPath)
+        self.username = username
+        self.battleCry = battleCry
+
+
+def battlefield(p):
+    """let the bee do the battle cry in an independent process"""
+    try:
+        bw = beelib.BeeWhisperer(p.fqdn, p.keyPath, p.username)
+        result = bw.remote[p.battleCry.command](p.battleCry.specifics)
+        return "%s\n%s" % (p.battleCry, result)
+    except:
+        return traceback.format_exc()
+
+
 class Config(beelib.BeeBrain):
     NAME = 'bees_config.json'
     """Global configuration"""
     KEY_NAME_PREFIX = "aws-ec2"
     DEFAULT_KEY_EXT = '.pem'
     DEFAULTS = dict(
-        numberOfBees=3,
+        numberOfBees=2,
         zone='us-east-1d',
         instanceType='t1.micro',
         instanceId='ami-ff17fb96',
@@ -239,13 +237,14 @@ class BattlePlan(beelib.BeeBrain, beelib.BeeWhisperer):
         mimeType='application/json;charset=UTF-8',
         additionalOptions=['-r'])
 
-    def __init__(self, fqdn, keyFilePath, username):
+    def __init__(self, fqdn, keyFilePath, username, armySize):
         beelib.BeeBrain.__init__(self, self.NAME)
         beelib.BeeWhisperer.__init__(self, fqdn, keyFilePath, username)
         self.url = self.DEFAULTS['url']
         self.command = self.DEFAULTS['command']
-        self.numberOfRequests = self.DEFAULTS['numberOfRequests']
-        self.concurrency = self.DEFAULTS['concurrency']
+        self.numberOfRequests = float(self.DEFAULTS['numberOfRequests'])
+        self.concurrency = float(self.DEFAULTS['concurrency'])
+        self.armySize = armySize
         self.postfilePath = self.DEFAULTS['postfilePath']
         self.mimeType = self.DEFAULTS['mimeType']
         self.additionalOptions = self.DEFAULTS['additionalOptions']
@@ -258,8 +257,10 @@ class BattlePlan(beelib.BeeBrain, beelib.BeeWhisperer):
             self.postfilePath = self._workPath / self.postfilePath
 
     def contrive(self):
-        self._battleCry.clarify(['-n', str(self.numberOfRequests)])
-        self._battleCry.clarify(['-c', str(self.concurrency)])
+        instanceRequests = int(self.numberOfRequests / self.armySize)
+        instanceConcurrency = int(float(self.concurrency) / self.armySize)
+        self._battleCry.clarify(['-n', str(instanceRequests)])
+        self._battleCry.clarify(['-c', str(instanceConcurrency)])
         self._create_exchange_file()
         self._battleCry.clarify(self.additionalOptions)
         if self.postfilePath:
