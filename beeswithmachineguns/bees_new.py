@@ -40,7 +40,8 @@ class BattlePack(object):
         self.battleCry = battleCry
 
 
-def _attack_in_process(pack):
+def async_worker(pack):
+    """do the work in an independent process"""
     try:
         bw = beelib.BeeWhisperer(pack.fqdn, pack.keyPath, pack.username)
         battleCry = pack.battleCry
@@ -77,7 +78,7 @@ class Beekeeper(object):
             pack = BattlePack(beeId=instance.id, fqdn=fqdn, keyPath=keyPath,
                               username=username, battleCry=battleCry)
             battlePacks.append(pack)
-        results = pool.map(_attack_in_process, battlePacks)
+        results = pool.map(async_worker, battlePacks)
         for result in results:
             print beelib.oa(result)
 
