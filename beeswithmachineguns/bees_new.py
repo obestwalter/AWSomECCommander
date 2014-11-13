@@ -171,8 +171,8 @@ class Config(beelib.BeeBrain):
     KEY_NAME_PREFIX = "aws-ec2"
     DEFAULT_KEY_EXT = '.pem'
     DEFAULTS = dict(
-        numberOfBees=2,
-        zone='us-east-1d',
+        numberOfBees=1,
+        zone='us-east-1c',
         instanceType='t1.micro',
         instanceId='ami-ff17fb96',
         securityGroups=['default'],
