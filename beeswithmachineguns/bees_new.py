@@ -44,15 +44,15 @@ class Beekeeper(object):
         numInstances = len(instances)
         pool = Pool(numInstances)
         battlePacks = []
-
-        for instance in instances:
-            fqdn = instance.public_dns_name
+        for bee in instances:
+            fqdn = bee.public_dns_name
             keyPath = self.cnf.KEY_PATH
             username = self.cnf.username
             battlePlan = BattlePlan(fqdn, keyPath, username,
                                     armySize=numInstances)
             battleCry = battlePlan.contrive()
-            pack = BattlePack(beeId=instance.id, fqdn=fqdn, keyPath=keyPath,
+            log.info("bee %s will shout %s", bee.id, battleCry)
+            pack = BattlePack(beeId=bee.id, fqdn=fqdn, keyPath=keyPath,
                               username=username, battleCry=battleCry)
             battlePacks.append(pack)
         results = pool.map(battlefield, battlePacks)
@@ -67,8 +67,9 @@ class Beekeeper(object):
         if self.cnf.activeSwarmId:
             log.info("remembering bees at %s:%s",
                      self.cnf.REGION, self.cnf.activeSwarmId)
-            self._connection = self._get_connection(self.cnf.REGION)
-            self.swarm = self._assemble_old_bee_friends()
+            if not self.swarm:
+                self._connection = self._get_connection(self.cnf.REGION)
+                self.swarm = self._assemble_old_bee_friends()
         else:
             log.info("no bees on my mind ...")
             if nocreate:
@@ -159,8 +160,7 @@ def battlefield(p):
     """let the bee do the battle cry in an independent process"""
     try:
         bw = beelib.BeeWhisperer(p.fqdn, p.keyPath, p.username)
-        result = bw.remote[p.battleCry.command](p.battleCry.specifics)
-        return "%s\n%s" % (p.battleCry, result)
+        return bw.remote[p.battleCry.command](p.battleCry.specifics)
     except:
         return traceback.format_exc()
 
