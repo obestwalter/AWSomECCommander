@@ -1,3 +1,5 @@
+[![Project Status: Abandoned – Initial development has started, but there has not yet been a stable, usable release; the project has been abandoned and the author(s) do not intend on continuing development.](http://www.repostatus.org/badges/latest/abandoned.svg)](http://www.repostatus.org/#abandoned)
+
 # AWSomeCommander
 
 Disclaimer: atm this is mainly for my own exploration of AWS and EC2 - if you're looking to do serious work I would recommend http://star.mit.edu/cluster/
